@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: us-east-1  # Change to your region
-  S3_BUCKET: your-bucket-name  # Change to your bucket name
+  AWS_REGION: ap-south-1  # Change to your region
+  S3_BUCKET: devshram.com  # Change to your bucket name
 
 permissions:
   id-token: write
@@ -32,13 +32,26 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          CI: true
 
+      - name: Check build output
+        run: |
+          if [ ! -d "./out" ]; then
+            echo "Build output directory not found!"
+            exit 1
+          fi
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/GitHubActionsRole
+          role-to-assume: arn:aws:iam::532197675314:role/github_actions_devshram
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://${{ env.S3_BUCKET }} --delete
+          aws s3 sync ./out s3://${{ env.S3_BUCKET }} \
+            --delete \
+            --exclude "*" \
+            --include "*.html" --cache-control "public,max-age=0,must-revalidate" \
+            --include "*.js" --include "*.css" --include "*.jpg" --include "*.png" --cache-control "public,max-age=31536000,immutable"
+          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
