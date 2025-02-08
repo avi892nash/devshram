@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: ap-south-1  # Change to your region
-  S3_BUCKET: devshram.com  # Change to your bucket name
-
+  AWS_REGION: ap-south-1  
+  S3_BUCKET: devshram.com 
+  CLOUDFRONT_DISTRIBUTION_ID: E2RU8A6DN1OCFF
 permissions:
   id-token: write
   contents: read
