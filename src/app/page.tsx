@@ -32,7 +32,7 @@ function HomeMain() {
         Through shram (श्रम) comes mastery - <br />
         this is the way of devshram
       </p>
-      <div className="flex flex-col flex-grow justify-end gap-10 mt-6 mb-6">
+      <div className="flex flex-col flex-grow gap-2 justify-end mb-6">
         <Logo
           width={120}
           height={120}
