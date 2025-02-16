@@ -5,11 +5,10 @@ import Logo from "./Logo";
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen ">
       <Header></Header>
-      <div className="flex flex-col flex-grow p-3">
+      <div className="flex flex-col flex-grow p-3 bg-background">
         <HomeMain></HomeMain>
-
         <CurrentWork></CurrentWork>
       </div>
     </div>
@@ -18,20 +17,26 @@ export default function Home() {
 
 function HomeMain() {
   return (
-    <div className="flex flex-col flex-grow gap-10">
-      <p className={`${youngSerif.className} mt-4 text-white text-4xl leading-15 `}>
-        Where 
-        <br />
-        <span><span className="text-primary">Dev</span>elopers Craft </span>
-        <br />
-        meets dedicated 
-        <br />
-        <a className="text-primary">effort</a>
-      </p>
-      <p className={`mt-2 text-gray-500 ${firaCode.className}`}>
-        Through shram (श्रम) comes mastery - <br />
-        this is the way of devshram
-      </p>
+    <div className="flex flex-col flex-grow">
+      <div className="flex flex-col flex-grow gap-5 justify-center">
+        <p
+          className={`${youngSerif.className} text-foreground text-4xl leading-15`}
+        >
+          Where
+          <br />
+          <span>
+            <span className="text-primary">Dev</span>elopers Craft
+          </span>
+          <br />
+          meets dedicated
+          <br />
+          <a className="text-primary">effort</a>
+        </p>
+        <p className={`mt-2 text-secondary ${firaCode.className}`}>
+          Through shram (श्रम) comes mastery - <br />
+          this is the way of devshram
+        </p>
+      </div>
       <div className="flex flex-col flex-grow gap-2 justify-end mb-6">
         <Logo
           width={120}

@@ -7,22 +7,19 @@
   --foreground: #B18248;
   --primary: #FF9500;
   --secondary: #ABB2BF;
+  --header-background: #B18248;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background:  #704e25;
-    --foreground: #B18248;
+    --background:  #4c361b;
+    --foreground: #ffffff;
     --primary: #FF9500;
     --secondary: #ABB2BF;
+    --header-background: #B18248;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: young-serif, serif;
-}
 
 .site-header {
   background: var(--background);
