@@ -11,7 +11,21 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
       },
+      stroke: {
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+      },
+      fill: {
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+      },
+      borderColor: {
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+      }
     },
   },
   plugins: [],
