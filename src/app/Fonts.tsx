@@ -13,5 +13,6 @@ export const youngSerif = Young_Serif({
 export const firaCode = Fira_Code({
     weight: "400",
     variable : "--font-fira-code",
-    preload : true
+    preload : true,
+    subsets : ["latin"]
 })
