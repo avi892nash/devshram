@@ -10,7 +10,7 @@ export const Header = () => {
         <div className="flex gap-2 ">
           <Image
             className="pt-1 pb-1"
-            src="/Logo 60x60 BG.png"
+            src="/logo60x60bg.png"
             alt="Devshram logo"
             width={16}
             height={16}
