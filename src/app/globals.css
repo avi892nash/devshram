@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #392813;
-  --foreground: #B18248;
+  --background:  #4c361b;
+  --foreground: #ffffff;
   --primary: #FF9500;
   --secondary: #ABB2BF;
   --header-background: #B18248;
@@ -28,3 +28,6 @@
   padding-top:16;
   
 } 
+.h-mobile {
+  height: calc(var(--vh) * 100);
+}

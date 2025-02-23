@@ -22,7 +22,9 @@ export const Header = () => {
         </div>
 
         {/* Right: Toolbar (Mobile Only) */}
+        <div className="md:hidden">
         <Toolbar width={24} height={24} fill="fill-secondary"></Toolbar>
+        </div>
       </div>
     </div>
   );
