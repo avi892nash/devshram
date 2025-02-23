@@ -1,17 +1,13 @@
 import Dots from "./Dots";
 import { firaCode, youngSerif } from "./Fonts";
-import Header from "./Header";
 import Logo from "./Logo";
 
 export default function Home() {
   return (
-    <div className="h-dvh h-mobile flex flex-col">
-      <Header></Header>
       <div className="flex flex-col flex-grow p-3 bg-background">
         <HomeMain></HomeMain>
         <CurrentWork></CurrentWork>
       </div> 
-    </div>
   );
 }
 

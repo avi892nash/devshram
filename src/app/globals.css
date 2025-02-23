@@ -28,6 +28,15 @@
   padding-top:16;
   
 } 
-.h-mobile {
-  height: calc(var(--vh) * 100);
+
+/* Fallback using the custom --vh variable */
+.full-height {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Use native dynamic viewport height if supported */
+@supports (height: 100dvh) {
+  .full-height {
+    height: 100dvh;
+  }
 }
