@@ -26,12 +26,12 @@ export const Header = ({
             </div>
           </div>
           {/* Middle: Navigation Links (Desktop Only) */}
-          <div className="hidden md:flex gap-6 text-foreground text-base">
+          <div className={"hidden  gap-6 text-foreground text-base" + (showMenu ? "" : " md:flex") }>
           {navList}
           </div>
 
           {/* Right: Toolbar (Mobile Only) */}
-          <div className="md:hidden" onClick={() => setShowMenu(!showMenu)}>
+          <div className={showMenu ? "": "md:hidden"} onClick={() => setShowMenu(!showMenu)}>
             <Toolbar width={24} height={24} fill="fill-secondary"></Toolbar>
           </div>
         </div>
