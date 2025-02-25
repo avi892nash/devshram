@@ -6,7 +6,7 @@ import Header from "./Header";
 export const metadata: Metadata = {
   title: "Devshram",
   description: "A blog about software development",
-  icons: { icon: "./Logo 60x60 BG.png" },
+  icons: { icon: "./favicon.ico" },
 };
 
 export default function RootLayout({
@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
         className={`${youngSerif.className} ${firaCode.className} antialiased`}
       >
