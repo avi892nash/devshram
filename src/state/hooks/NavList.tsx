@@ -1,5 +1,6 @@
 import React, { useSyncExternalStore } from 'react';
-import selectedNavStore from '../state/external/nav';
+import selectedNavStore from '../external/nav';
+import { LanguageSelector } from '@/component/language';
 
 
 /*
@@ -10,7 +11,7 @@ import selectedNavStore from '../state/external/nav';
     #contacts
     LanguageComponent
 */
-export default function NavList(){
+export default function useNavList(){
     const selected = useSyncExternalStore(selectedNavStore.subscribe, selectedNavStore.getSnapshot, selectedNavStore.getServerSnapshot);
     const navListUI = ({id, name}: {id : string, name: string}) => {
         const isSelected = selected == id;
@@ -21,8 +22,9 @@ export default function NavList(){
         {name: "tools", id: "#tools"},
         {name: "works", id: "#works"},
         {name: "about-me", id: "#about-me"},
-        {name: "contacts", id: "#contacts"},
-        {name: "language", id: "#language"},    
+        {name: "contacts", id: "#contacts"}  
     ];
-    return navBarList.map(navListUI);
+    const navList = navBarList.map(navListUI);
+    navList.push(<LanguageSelector key="langauage"/>);
+    return navList;
 }
