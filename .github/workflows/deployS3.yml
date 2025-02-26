@@ -45,11 +45,22 @@ jobs:
           role-to-assume: arn:aws:iam::532197675314:role/github_actions_devshram
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Deploy to S3
-        run: |
-          aws s3 sync ./out s3://${{ env.S3_BUCKET }}/devshram \
-            --delete \
-            --exclude "*" \
-            --include "*.html" --cache-control "public,max-age=0,must-revalidate" \
-            --include "*.js" --include "*.css" --include "*.jpg" --include "*.png" --include "*.woff2" --cache-control "public,max-age=31536000,immutable"
-          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+- name: Deploy to S3
+  run: |
+    # Sync everything except HTML files with long-term caching
+    aws s3 sync ./out s3://${{ env.S3_BUCKET }}/devshram \
+      --delete \
+      --exclude "*.html" \
+      --cache-control "public,max-age=31536000,immutable"
+
+    # Upload HTML files with cache validation headers (no caching)
+    aws s3 cp ./out s3://${{ env.S3_BUCKET }}/devshram \
+      --recursive \
+      --exclude "*" \
+      --include "*.html" \
+      --cache-control "public,max-age=0,must-revalidate" \
+      --metadata-directive REPLACE
+
+    # Invalidate CloudFront cache so changes propagate immediately
+    aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+
