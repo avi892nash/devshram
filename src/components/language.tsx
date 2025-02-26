@@ -22,7 +22,7 @@ export function LanguageSelector() {
 
   return (
     <div className="flex">
-      <div style={{position : "relative"}}className="self-start">
+      <div className="relative items-center">
         <div className="flex items-center cursor-pointer">
           <div className="text-secondary">{selectedLanguage}</div>
           <div
@@ -59,17 +59,17 @@ export function LanguageSelector() {
 
         {/* Dropdown menu */}
         {isOpen && (
-          <div style = {{position : "absolute", left: 5}}>
+          <div className="absolute left-1/2 transform -translate-x-1/2">
             <div className="self-start flex flex-col bg-background border border-secondary items-center p-2">
               <div
                 className="text-secondary"
-                onClick={() => selectLanguage("en")}
+                onClick={() => selectLanguage("EN")}
               >
                 EN
               </div>
               <div
                 className="text-secondary"
-                onClick={() => selectLanguage("hi")}
+                onClick={() => selectLanguage("HI")}
               >
                 HI
               </div>

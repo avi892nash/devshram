@@ -2,8 +2,8 @@
 
 
 type Subscriber = () => void; 
-export type Language = "en" | "hi";
-let selectedLanguage:Language = "en";
+export type Language = "EN" | "HI";
+let selectedLanguage:Language = "EN";
 const subscribers = new Set<Subscriber>();
 
 const selectedLanguageStore = {

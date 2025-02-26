@@ -1,6 +1,6 @@
 import React, { useSyncExternalStore } from 'react';
 import selectedNavStore from '../external/nav';
-import { LanguageSelector } from '@/component/language';
+import { LanguageSelector } from '@/components/language';
 
 
 /*

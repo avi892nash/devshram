@@ -5,7 +5,7 @@ import { youngSerif } from "./Fonts";
 import Logo from "./Logo";
 import Toolbar from "./Toolbar";
 import useNavList from "../state/hooks/NavList";
-import { useLinks } from "@/component/Links";
+import { useLinks } from "@/components/Links";
 
 export const Header = ({
   children,
@@ -18,7 +18,7 @@ export const Header = ({
   return (
     <>
       <div className="sticky top-0 bg-headerBackground">
-        <div className="pb-2 pt-3 pl-3 pr-3 flex justify-between">
+        <div className="pb-2 pt-5 pl-3 pr-3 flex justify-between">
           <div className="flex gap-2 justify-center items-center">
             <Logo height={18} width={18} fill="fill-foreground"></Logo>
             <div className={`${youngSerif.className} text-foreground text-lg `}>
