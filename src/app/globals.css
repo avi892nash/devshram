@@ -7,7 +7,7 @@
   --foreground: #ffffff;
   --primary: #FF9500;
   --secondary: #ABB2BF;
-  --header-background: #B18248;
+  --light-background: #B18248;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,7 +16,7 @@
     --foreground: #ffffff;
     --primary: #FF9500;
     --secondary: #ABB2BF;
-    --header-background: #B18248;
+    --light-background: #B18248;
   }
 }
 

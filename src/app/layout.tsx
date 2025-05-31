@@ -16,11 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
       <body
         className={`${youngSerif.className} ${firaCode.className} antialiased`}
       >
-        <div className="full-height flex flex-col">
+        <div className="full-height flex flex-col justify-center">
           <Header>{children}</Header>
         </div>
       </body>

@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-        headerBackground: "var(--header-background)",
+        lightBackground: "var(--light-background)",
       },
       stroke: {
         background: "var(--background)",
