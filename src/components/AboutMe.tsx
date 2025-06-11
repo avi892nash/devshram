@@ -20,7 +20,7 @@ export default function AboutMe() {
             
                           <div className="space-y-4 text-secondary leading-relaxed">
               <p className="text-base">
-                Hello, I&apos;m Elias!
+                Hello, I&apos;m Avinash!
               </p>
               
               <p className="text-base">

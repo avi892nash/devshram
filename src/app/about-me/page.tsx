@@ -61,7 +61,7 @@ const AboutMePage = () => {
         {/* Introduction Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Hello, I&apos;m Elias!</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Hello, I&apos;m Avinash!</h2>
             
             <p className="text-secondary leading-relaxed">
               I&apos;m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.

@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-primary rounded-sm"></div>
-              <h3 className="text-xl font-semibold">Elias</h3>
+              <h3 className="text-xl font-semibold">Avinash</h3>
             </div>
             
             <div className="space-y-2">
