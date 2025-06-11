@@ -7,70 +7,93 @@ import Toolbar from "./Toolbar";
 import useNavList from "../state/hooks/NavList";
 import { useLinks } from "@/components/Links";
 import SocialSidebar from "@/components/SocialSidebar";
+import { usePathname } from "next/navigation";
 
 export const Header = ({
   children,
+  footer,
 }: Readonly<{
   children: React.ReactNode;
+  footer: React.ReactNode;
 }>) => {
-  // variable to show burgen open menu
+  // variable to show burger open menu
   const [showMenu, setShowMenu] = React.useState(false);
   const navList = useNavList();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   return (
-    <div className="relative flex flex-grow overflow-auto md:justify-center bg-background">
-      <div className="hidden relative md:flex justify-center pl-20 pr-20">
-        <div className="absolute">
-        <SocialSidebar></SocialSidebar>
-        </div>
-      </div>
-      <div className="flex-grow flex flex-col ">
-        <div className="sticky top-0 bg-lightBackground ">
-          <div className="pb-2 pt-5 pl-3 pr-3 flex justify-between">
-            <div className="flex gap-2 justify-center items-center">
-              <Logo height={18} width={18} fill="fill-foreground"></Logo>
-              <div
-                className={`${youngSerif.className} text-foreground text-lg `}
-              >
-                Devshram
+    <>
+      <div className="overflow-auto md:justify-center bg-background">
+        <div className="relative flex flex-grow">
+          <div className="hidden md:flex flex-grow px-8 ">
+            <div>
+              <div className="sticky top-0">
+                <SocialSidebar></SocialSidebar>
               </div>
             </div>
-            {/* Middle: Navigation Links (Desktop Only) */}
-            <div
-              className={
-                "hidden gap-6 text-foreground text-base" +
-                (showMenu ? "" : " md:flex")
-              }
-            >
-              {navList}
-            </div>
+          </div>
+          <div className="flex-grow flex flex-col w-full max-w-[1300px] mx-auto min-h-screen">
+            <div className="sticky top-0 bg-lightBackground w-full z-50">
+              <div className="pb-2 pt-5 pl-3 pr-3 flex justify-between">
+                <div className="flex gap-2 justify-center items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.location.href = '/';
+                  }
+                }}>
+                  <Logo height={18} width={18} fill="fill-foreground"></Logo>
+                  <div
+                    className={`${youngSerif.className} text-foreground text-lg `}
+                  >
+                    Devshram
+                  </div>
+                </div>
+                {/* Middle: Navigation Links (Desktop Only) */}
+                <div
+                  className={
+                    "hidden gap-6 text-foreground text-base" +
+                    (showMenu ? "" : " md:flex")
+                  }
+                >
+                  {navList}
+                </div>
 
-            {/* Right: Toolbar (Mobile Only) */}
-            <div
-              className={showMenu ? "" : "md:hidden"}
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              <Toolbar width={24} height={24} fill="fill-secondary"></Toolbar>
+                {/* Right: Toolbar (Mobile Only) */}
+                <div
+                  className={showMenu ? "" : "md:hidden"}
+                  onClick={() => setShowMenu(!showMenu)}
+                >
+                  <Toolbar
+                    width={24}
+                    height={24}
+                    fill="fill-secondary"
+                  ></Toolbar>
+                </div>
+              </div>
             </div>
+            {showMenu ? <NavListMenu /> : children}
+          </div>
+          <div className="hidden md:flex flex-grow px-8">
+            <div className="absolute"></div>
           </div>
         </div>
-        {showMenu ? <NavListMenu /> : children}
-      </div>
-       <div className="hidden relative md:flex justify-center pl-20 pr-20">
-        <div className="absolute">
+        <div className={isHomePage ? "hidden md:block" : "block md:block"}>
+          {footer}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 function NavListMenu() {
   const navList = useNavList();
-  const linkList = useLinks({ width: 64, height: 64 });
+  const linkList = useLinks({ width: 64, height: 64, fill : "fill-foreground" });
   return (
-    <div className="flex flex-col flex-grow p-6 bg-background">
-      <div className="flex flex-col flex-grow text-foreground text-3xl justify-around">
+    <div className="flex flex-grow flex-col p-6 bg-background">
+      <div className="flex flex-col space-y-8 text-foreground text-3xl pt-8">
         {navList}
-        <div className="flex flex-row gap-5 justify-center ">{linkList}</div>
+      </div>
+      <div className="flex flex-row gap-8 justify-center mt-auto mb-8 p-4">
+        {linkList}
       </div>
     </div>
   );

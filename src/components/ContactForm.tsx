@@ -29,7 +29,7 @@ export default function ContactForm() {
         />
         <button
           type="submit"
-          className="mt-4 px-8 py-2 border-2 border-secondary text-2xl font-mono text-foreground font-bold bg-transparent hover:bg-secondary/10 transition-colors"
+          className="mt-4 px-8 py-2 border-2 border-primary text-2xl font-mono text-foreground font-bold bg-transparent hover:bg-muted transition-colors"
         >
           Send
         </button>

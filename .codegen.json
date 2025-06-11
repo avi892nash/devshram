@@ -1,0 +1,46 @@
+{
+  "templates": {
+    "component": {
+      "path": "src/components",
+      "extension": ".tsx",
+      "template": "interface {{name}}Props {\n  // Define props here\n}\n\nexport default function {{name}}(props: {{name}}Props) {\n  return (\n    <div className=\"\">\n      {/* Component content */}\n    </div>\n  );\n}"
+    },
+    "page": {
+      "path": "src/app",
+      "extension": "/page.tsx",
+      "template": "export default function {{name}}Page() {\n  return (\n    <main className=\"container mx-auto px-4 py-8\">\n      <h1 className=\"text-3xl font-bold mb-6\">{{title}}</h1>\n      {/* Page content */}\n    </main>\n  );\n}"
+    },
+    "hook": {
+      "path": "src/hooks",
+      "extension": ".ts",
+      "template": "import { useState, useEffect } from 'react';\n\nexport function use{{name}}() {\n  // Hook implementation\n  return {\n    // Return values\n  };\n}"
+    }
+  },
+  "rules": {
+    "typescript": {
+      "strict": true,
+      "noImplicitAny": true,
+      "preferInterfaces": true
+    },
+    "imports": {
+      "sortOrder": ["react", "next", "third-party", "local"],
+      "groupSeparation": true
+    },
+    "styling": {
+      "preferTailwind": true,
+      "responsiveFirst": true
+    },
+    "naming": {
+      "components": "PascalCase",
+      "files": "PascalCase",
+      "functions": "camelCase",
+      "constants": "UPPER_SNAKE_CASE"
+    }
+  },
+  "lint": {
+    "maxLineLength": 100,
+    "indentation": 2,
+    "semicolons": true,
+    "trailingCommas": true
+  }
+} 

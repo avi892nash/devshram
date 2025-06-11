@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { youngSerif, firaCode } from "./Fonts";
 import Header from "./Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Devshram",
@@ -20,7 +21,8 @@ export default function RootLayout({
         className={`${youngSerif.className} ${firaCode.className} antialiased`}
       >
         <div className="full-height flex flex-col justify-center">
-          <Header>{children}</Header>
+          <Header footer={<Footer></Footer>} > {children} 
+          </Header>
         </div>
       </body>
     </html>

@@ -1,30 +1,48 @@
-import React, { useSyncExternalStore } from 'react';
-import selectedNavStore from '../external/nav';
+'use client';
+
+import React from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { LanguageSelector } from '@/components/language';
 
 
 /*
-    #home
-    #tools
-    #works
-    #about-me
-    #contacts
-    LanguageComponent
+    /
+    /projects
+    /about-me
+    /contact
 */
 export default function useNavList(){
-    const selected = useSyncExternalStore(selectedNavStore.subscribe, selectedNavStore.getSnapshot, selectedNavStore.getServerSnapshot);
-    const navListUI = ({id, name}: {id : string, name: string}) => {
-        const isSelected = selected == id;
-        return (<a key={id} href={id} className={isSelected ? 'text-foreground' : 'text-secondary'}><span className='text-primary'>#</span>{name}</a>);
+    const router = useRouter();
+    const pathname = usePathname();
+    
+    const navListUI = (item: {path: string, name: string}) => {
+        const isSelected = pathname === item.path;
+        const handleClick = (e: React.MouseEvent) => {
+            e.preventDefault();
+            router.push(item.path);
+        };
+        
+        return (
+            <a 
+                key={item.path} 
+                href={item.path} 
+                onClick={handleClick}
+                className={isSelected ? 'text-foreground cursor-pointer' : 'text-secondary cursor-pointer hover:text-foreground transition-colors'}
+            >
+                <span className='text-primary'>#</span>{item.name}
+            </a>
+        );
     };
+    
     const navBarList = [
-        {name: "home", id: "#home"},
-        {name: "tools", id: "#tools"},
-        {name: "works", id: "#works"},
-        {name: "about-me", id: "#about-me"},
-        {name: "contacts", id: "#contacts"}  
+        {name: "home", path: "/"},
+        {name: "blog", path: "/blog"},
+        {name: "tools", path: "/tools"},
+        {name: "about-me", path: "/about-me"},
+        {name: "contacts", path: "/contact"}
     ];
+    
     const navList = navBarList.map(navListUI);
-    navList.push(<LanguageSelector key="langauage"/>);
+    navList.push(<LanguageSelector key="language"/>);
     return navList;
 }
