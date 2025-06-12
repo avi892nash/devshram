@@ -47,7 +47,7 @@ const FunFactCard = ({ fact }: { fact: string }) => (
 
 const AboutMePage = () => {
   return (
-    <div className="min-h-screen w-full bg-background text-foreground relative">
+    <div className="min-h-screen w-full bg-lightBackground text-foreground relative">
       <div className="w-full max-w-[1300px] mx-auto px-6 py-12">
         {/* Header */}
         <div className="mb-12">

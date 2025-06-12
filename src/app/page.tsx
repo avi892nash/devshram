@@ -9,7 +9,7 @@ import Contacts from "@/components/Contacts";
 
 export default function Home() {
   return (
-    <div className="flex flex-grow w-full bg-background">
+    <div className="flex flex-grow w-full bg-lightBackground">
       <div className="flex flex-grow md:flex-col w-full max-w-[1300px] mx-auto">
         <div className="flex flex-grow flex-col md:flex-row md:items-center justify-center px-4 py-4 md:h-auto">
           <div className="flex flex-col flex-grow justify-center md:justify-normal">
