@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Dots from "@/app/Dots";
+import { personal } from "@/data";
 
 export default function AboutMe() {
   return (
@@ -20,22 +21,15 @@ export default function AboutMe() {
             
                           <div className="space-y-4 text-secondary leading-relaxed">
               <p className="text-base">
-                Hello, I&apos;m Avinash!
+                Hello, I&apos;m {personal.name}!
               </p>
               
               <p className="text-base">
-                I&apos;m a self-taught front-end developer based in Kyiv, 
-                Ukraine. I can develop responsive websites from 
-                scratch and raise them into modern user-friendly web 
-                experiences.
+                {personal.description}
               </p>
               
               <p className="text-base">
-                Transforming my creativity and knowledge into a 
-                websites has been my passion for over a year. I have 
-                been helping various clients to establish their 
-                presence online. I always strive to learn about the 
-                newest technologies and frameworks.
+                {personal.passion}
               </p>
             </div>
             
@@ -56,7 +50,7 @@ export default function AboutMe() {
           <div className="relative">
             <div className="relative">
               <Image
-                src="/avinash.png"
+                src={personal.image}
                 alt="Profile image"
                 width={400}
                 height={600}

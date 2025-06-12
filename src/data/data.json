@@ -1,0 +1,194 @@
+{
+  "personal": {
+    "name": "Avinash",
+    "title": "Front-end Developer",
+    "location": "Kyiv, Ukraine",
+    "description": "I'm a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
+    "passion": "Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.",
+    "image": "/avinash.png"
+  },
+  "home": {
+    "title": {
+      "main": "Where",
+      "highlight1": "Dev",
+      "continuation": "elopers Craft",
+      "line2": "meets dedicated",
+      "highlight2": "effort"
+    },
+    "subtitle": "Through shram (श्रम) comes mastery -",
+    "subtitle2": "this is the way of devshram",
+    "currentWork": {
+      "status": "Currently working on",
+      "project": "Devshram"
+    }
+  },
+  "quote": {
+    "text": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs"
+  },
+  "skills": {
+    "languages": ["TypeScript", "Lua", "Python", "JavaScript"],
+    "databases": ["SQLite", "PostgreSQL", "Mongo"],
+    "frameworks": ["React", "Vue", "Dinsnake", "Discord.js", "Flask", "Express.js"],
+    "tools": ["VSCode", "Neovim", "Linux", "Figma", "XFCE", "Arch", "Git", "Font Awesome"],
+    "other": ["HTML", "CSS", "EJS", "SCSS", "REST", "Jinja"]
+  },
+  "contacts": {
+    "message": "I'm interested in freelance opportunities. However, if you have other request or question, don't hesitate to contact me",
+    "links": [
+      {
+        "type": "discord",
+        "href": "https://discord.com/users/523615093917745163",
+        "title": "avi892nash",
+        "displayText": "avi892nash"
+      },
+      {
+        "type": "github",
+        "href": "https://github.com/avi892nash",
+        "title": "avi892nash",
+        "displayText": "avi892nash"
+      },
+      {
+        "type": "linkedin",
+        "href": "https://www.linkedin.com/in/avi892nash/",
+        "title": "avi892nash",
+        "displayText": "avi892nash"
+      },
+      {
+        "type": "email",
+        "href": "mailto:avihsan8922@gmail.com",
+        "title": "avihsan8922@gmail.com",
+        "displayText": "avihsan8922@gmail.com"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "ChertNodes",
+      "description": "Minecraft servers hosting",
+      "technologies": ["HTML", "SCSS", "Python", "Flask"],
+      "liveLink": "#",
+      "cachedLink": "#",
+      "theme": "brown",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app",
+      "featured": true
+    },
+    {
+      "title": "Kahoot Answers Viewer",
+      "description": "Get answers to your kahoot quiz",
+      "technologies": ["CSS", "Express", "Node.js"],
+      "liveLink": "#",
+      "theme": "purple",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app",
+      "featured": true
+    },
+    {
+      "title": "ProtectX",
+      "description": "Discord anti-crash bot",
+      "technologies": ["React", "Express", "Discord.js", "Node.js"],
+      "liveLink": "#",
+      "cachedLink": "#",
+      "theme": "green",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app",
+      "featured": true
+    },
+    {
+      "title": "Kotik Bot",
+      "description": "Multi-functional discord bot",
+      "technologies": ["HTML", "CSS", "JS"],
+      "liveLink": "#",
+      "theme": "brown",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app"
+    },
+    {
+      "title": "Portfolio",
+      "description": "You're using it rn",
+      "technologies": ["Vue", "TS", "Less"],
+      "githubLink": "#",
+      "theme": "dark",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app"
+    },
+    {
+      "title": "Bot boilerplate",
+      "description": "Start creating scalable discord.js bot with typescript in seconds",
+      "technologies": ["Discord.js", "TS", "JS"],
+      "githubLink": "#",
+      "theme": "brown",
+      "category": "small-project"
+    },
+    {
+      "title": "My blog",
+      "description": "Front-end of my future blog website written in vue",
+      "technologies": ["VUE", "CSS", "JS"],
+      "githubLink": "#",
+      "theme": "brown",
+      "category": "small-project"
+    },
+    {
+      "title": "Chess pro",
+      "description": "Figma landing page about service for viewing chess tournaments",
+      "technologies": ["Figma"],
+      "figmaLink": "#",
+      "theme": "brown",
+      "category": "small-project"
+    },
+    {
+      "title": "Building Modern Web Apps",
+      "description": "A comprehensive guide to building modern web applications with React and Next.js",
+      "technologies": ["React", "Next.js", "TypeScript"],
+      "liveLink": "#",
+      "theme": "purple",
+      "category": "blog",
+      "featured": true
+    },
+    {
+      "title": "State Management in React",
+      "description": "Understanding different state management solutions for React applications",
+      "technologies": ["React", "Redux", "Zustand"],
+      "liveLink": "#",
+      "theme": "green",
+      "category": "blog"
+    },
+    {
+      "title": "TypeScript Best Practices",
+      "description": "Essential TypeScript patterns and practices for better code quality",
+      "technologies": ["TypeScript", "JavaScript"],
+      "liveLink": "#",
+      "theme": "brown",
+      "category": "blog"
+    },
+    {
+      "title": "Code Formatter",
+      "description": "A powerful code formatting tool for multiple programming languages",
+      "technologies": ["Node.js", "CLI", "TypeScript"],
+      "githubLink": "#",
+      "liveLink": "#",
+      "theme": "green",
+      "category": "tool",
+      "featured": true
+    },
+    {
+      "title": "API Tester",
+      "description": "Simple tool to test REST APIs with different HTTP methods",
+      "technologies": ["React", "JavaScript", "CSS"],
+      "githubLink": "#",
+      "liveLink": "#",
+      "theme": "purple",
+      "category": "tool"
+    },
+    {
+      "title": "Color Palette Generator",
+      "description": "Generate beautiful color palettes for your design projects",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "githubLink": "#",
+      "liveLink": "#",
+      "theme": "brown",
+      "category": "tool"
+    }
+  ]
+} 

@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import AboutMe from "@/components/AboutMe";
 import Contacts from "@/components/Contacts";
+import { home, quote } from "@/data";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         </div>
         <div className="px-6 py-32 pb-24 hidden md:block">
           <div className="flex justify-center">
-            <QuoteCard quote="The only way to do great work is to love what you do." author="Steve Jobs"></QuoteCard>
+            <QuoteCard quote={quote.text} author={quote.author}></QuoteCard>
           </div>
         </div>
         <div className="px-6 pb-24 hidden md:block">
@@ -50,19 +51,19 @@ function HomeMain() {
       <p
         className={`${youngSerif.className} text-foreground text-2xl sm:text-3xl  leading-15`}
       >
-        Where
+        {home.title.main}
         <br />
         <span>
-          <span className="text-primary">Dev</span>elopers Craft
+          <span className="text-primary">{home.title.highlight1}</span>{home.title.continuation}
         </span>
         <br />
-        meets dedicated
+        {home.title.line2}
         <br />
-        <a className="text-primary">effort</a>
+        <a className="text-primary">{home.title.highlight2}</a>
       </p>
       <p className={`mt-2 text-secondary sm:text-xl ${firaCode.className}`}>
-        Through shram (श्रम) comes mastery - <br />
-        this is the way of devshram
+        {home.subtitle} <br />
+        {home.subtitle2}
       </p>
     </div>
   );
@@ -100,7 +101,7 @@ function CurrentWork() {
         <div className="w-4 h-4 bg-primary flex-shrink-0 ml-2"></div>
         <div className="p-2">
           <p className={`text-secondary ${firaCode.className}`}>
-            Currently working on <br /> <a className="text-white">Devshram</a>{" "}
+            {home.currentWork.status} <br /> <a className="text-white">{home.currentWork.project}</a>{" "}
           </p>
         </div>
       </div>

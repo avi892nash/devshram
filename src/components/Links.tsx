@@ -3,6 +3,7 @@ import DiscordLink from "./Links/Discord";
 import Github from "./Links/Github";
 import LinkedIn from "./Links/LinkedIn";
 import Email from "./Links/Email";
+import { contacts } from "@/data";
 
 export interface LinkItem {
   type: 'discord' | 'github' | 'linkedin' | 'email';
@@ -30,32 +31,7 @@ export function useLinks({
   linkClassName = "hover:opacity-80 transition-opacity duration-300",
   itemClassName = "flex items-center gap-3"
 }: UseLinksOptions) {
-  const linkData: LinkItem[] = [
-    {
-      type: 'discord',
-      href: "https://discord.com/users/523615093917745163",
-      title: "avi892nash",
-      displayText: "avi892nash"
-    },
-    {
-      type: 'github',
-      href: "https://github.com/avi892nash",
-      title: "avi892nash",
-      displayText: "avi892nash"
-    },
-    {
-      type: 'linkedin',
-      href: "https://www.linkedin.com/in/avi892nash/",
-      title: "avi892nash",
-      displayText: "avi892nash"
-    },
-    {
-      type: 'email',
-      href: "mailto:avihsan8922@gmail.com",
-      title: "avihsan8922@gmail.com",
-      displayText: "avihsan8922@gmail.com"
-    }
-  ];
+  const linkData: LinkItem[] = contacts.links;
 
   const renderLink = (item: LinkItem, key: string) => {
     let IconComponent;

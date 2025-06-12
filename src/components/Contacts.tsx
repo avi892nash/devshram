@@ -1,5 +1,6 @@
 import React from "react";
 import { useLinks } from "./Links";
+import { contacts } from "@/data";
 
 export default function Contacts() {
   const contactLinks = useLinks({ 
@@ -34,9 +35,7 @@ export default function Contacts() {
             <div className="max-w-md">
               <div className="space-y-4 text-secondary leading-relaxed">
                 <p className="text-base">
-                  I&apos;m interested in freelance opportunities. However, 
-                  if you have other request or question, don&apos;t 
-                  hesitate to contact me
+                  {contacts.message}
                 </p>
               </div>
             </div>

@@ -2,6 +2,7 @@ import Dots from '@/app/Dots';
 import Logo from '@/app/Logo';
 import Square from '@/app/Square';
 import React from 'react';
+import { skills } from '@/data';
 
 const SkillsSection = () => {
   return (
@@ -43,16 +44,14 @@ const SkillsSection = () => {
               <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Languages</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
-                  TypeScript Lua<br />
-                  Python JavaScript
+                  {skills.languages.join(' ')}
                 </div>
               </div>
 
               <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Other</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
-                  HTML CSS EJS SCSS<br />
-                  REST Jinja
+                  {skills.other.join(' ')}
                 </div>
               </div>
             </div>
@@ -62,17 +61,14 @@ const SkillsSection = () => {
               <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Databases</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
-                  SQLite PostgreSQL<br />
-                  Mongo
+                  {skills.databases.join(' ')}
                 </div>
               </div>
 
               <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Frameworks</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
-                  React Vue<br />
-                  Dinsnake Discord.js<br />
-                  Flask Express.js
+                  {skills.frameworks.join(' ')}
                 </div>
               </div>
             </div>
@@ -82,9 +78,7 @@ const SkillsSection = () => {
               <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Tools</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
-                  VSCode Neovim Linux<br />
-                  Figma XFCE Arch<br />
-                  Git Font Awesome
+                  {skills.tools.join(' ')}
                 </div>
               </div>
             </div>
