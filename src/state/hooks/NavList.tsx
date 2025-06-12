@@ -11,7 +11,7 @@ import { LanguageSelector } from '@/components/language';
     /about-me
     /contact
 */
-export default function useNavList(){
+export default function useNavList(onItemClick?: () => void){
     const router = useRouter();
     const pathname = usePathname();
     
@@ -20,6 +20,10 @@ export default function useNavList(){
         const handleClick = (e: React.MouseEvent) => {
             e.preventDefault();
             router.push(item.path);
+            // Close mobile menu when navigation item is clicked
+            if (onItemClick) {
+                onItemClick();
+            }
         };
         
         return (

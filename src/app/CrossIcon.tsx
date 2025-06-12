@@ -2,15 +2,17 @@
 
 import React from "react";
 
-export default function Toolbar({
+export default function CrossIcon({
   width = 24,
   height = 24,
-  fill = "none",
+  stroke = "currentColor",
+  strokeWidth = 2,
   className = "",
 }: {
   width?: number | string;
   height?: number | string;
-  fill?: string;
+  stroke?: string;
+  strokeWidth?: number | string;
   className?: string;
 }) {
   return (
@@ -18,12 +20,17 @@ export default function Toolbar({
       width={width}
       height={height}
       viewBox="0 0 24 24"
-      fill={fill}
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <rect y="5" width="24" height="2" fill="currentColor" />
-      <rect x="9" y="12" width="15" height="2" fill="currentColor" />
+      <path 
+        d="M18 6L6 18M6 6l12 12" 
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
     </svg>
   );
-}
+} 

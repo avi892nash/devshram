@@ -4,6 +4,7 @@ import React from "react";
 import { youngSerif } from "./Fonts";
 import Logo from "./Logo";
 import Toolbar from "./Toolbar";
+import CrossIcon from "./CrossIcon";
 import useNavList from "../state/hooks/NavList";
 import { useLinks } from "@/components/Links";
 import SocialSidebar from "@/components/SocialSidebar";
@@ -62,21 +63,32 @@ export const Header = ({
                   className={showMenu ? "" : "md:hidden"}
                   onClick={() => setShowMenu(!showMenu)}
                 >
-                  <Toolbar
-                    width={24}
-                    height={24}
-                    fill="fill-secondary"
-                  ></Toolbar>
+                  {showMenu ? (
+                    <CrossIcon
+                      width={24}
+                      height={24}
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      className="text-foreground"
+                    />
+                  ) : (
+                    <Toolbar
+                      width={24}
+                      height={24}
+                      fill="none"
+                      className="text-foreground"
+                    />
+                  )}
                 </div>
               </div>
             </div>
-            {showMenu ? <NavListMenu /> : children}
+            {showMenu ? <NavListMenu onItemClick={() => setShowMenu(false)} /> : children}
           </div>
           <div className="hidden md:flex flex-grow px-8">
             <div className="absolute"></div>
           </div>
         </div>
-        <div className={isHomePage ? "hidden md:block" : "block md:block"}>
+        <div className={showMenu ? "hidden" : (isHomePage ? "hidden md:block" : "block md:block")}>
           {footer}
         </div>
       </div>
@@ -84,16 +96,24 @@ export const Header = ({
   );
 };
 
-function NavListMenu() {
-  const navList = useNavList();
-  const linkList = useLinks({ width: 64, height: 64, fill : "fill-foreground" });
+function NavListMenu({ onItemClick }: { onItemClick: () => void }) {
+  const navList = useNavList(onItemClick);
+  const linkList = useLinks({ width: 80, height: 80, fill : "fill-foreground" });
   return (
     <div className="flex flex-grow flex-col p-6 bg-background">
       <div className="flex flex-col space-y-8 text-foreground text-3xl pt-8">
         {navList}
       </div>
-      <div className="flex flex-row gap-8 justify-center mt-auto mb-8 p-4">
-        {linkList}
+      <div className="flex flex-grow justify-center">
+        <div className="flex items-center">
+      <div className="grid grid-cols-3 grid-rows-2 items-center gap-6">
+        {linkList.map((link, index) => (
+          <div key={index} className="w-16 h-16 flex items-center justify-center">
+            {link}
+          </div>
+        ))}
+        </div>
+      </div>
       </div>
     </div>
   );
