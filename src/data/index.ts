@@ -73,33 +73,33 @@ export interface SiteData {
   projects: Project[];
 }
 
-// Export the data with proper typing
+// Export the fallback data with proper typing (used for static generation)
 export const siteData: SiteData = data as SiteData;
 
-// Helper functions for projects
-export const getProjectsByCategory = (category: Project['category']): Project[] => {
-  return siteData.projects.filter(project => project.category === category);
+// Helper functions for projects that work with translated data
+export const getProjectsByCategory = (projects: Project[], category: Project['category']): Project[] => {
+  return projects.filter(project => project.category === category);
 };
 
-export const getFeaturedProjects = (): Project[] => {
-  return siteData.projects.filter(project => project.featured);
+export const getFeaturedProjects = (projects: Project[]): Project[] => {
+  return projects.filter(project => project.featured);
 };
 
-export const getCompleteApps = (): Project[] => {
-  return siteData.projects.filter(project => project.category === 'complete-app');
+export const getCompleteApps = (projects: Project[]): Project[] => {
+  return projects.filter(project => project.category === 'complete-app');
 };
 
-export const getSmallProjects = (): Project[] => {
-  return siteData.projects.filter(project => project.category === 'small-project');
+export const getSmallProjects = (projects: Project[]): Project[] => {
+  return projects.filter(project => project.category === 'small-project');
 };
 
-export const getBlogPosts = (): Project[] => {
-  return siteData.projects.filter(project => project.category === 'blog');
+export const getBlogPosts = (projects: Project[]): Project[] => {
+  return projects.filter(project => project.category === 'blog');
 };
 
-export const getTools = (): Project[] => {
-  return siteData.projects.filter(project => project.category === 'tool');
+export const getTools = (projects: Project[]): Project[] => {
+  return projects.filter(project => project.category === 'tool');
 };
 
-// Export individual sections for easy access
+// Export individual sections for easy access (fallback data)
 export const { personal, home, quote, skills, contacts, projects } = siteData; 

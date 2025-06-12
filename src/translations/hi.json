@@ -1,0 +1,194 @@
+{
+  "personal": {
+    "name": "अविनाश",
+    "title": "फुल स्टैक डेवलपर",
+    "location": "भारत",
+    "description": "मैं अविनाश हूं, भारत में स्थित एक फुल स्टैक डेवलपर। मैं एप्लिकेशन, डेवलपर टूल्स और नवाचारी प्रोजेक्ट्स बनाने में विशेषज्ञ हूं जो वास्तविक समस्याओं का समाधान करते हैं।",
+    "passion": "मुझे गणित के लिए गहरा जुनून है, विशेष रूप से कम्प्यूटेशनल गणित और गेम डेवलपमेंट में उपयोग होने वाली दृश्य तकनीकों के लिए। मैं फ्रैक्टल्स और उनकी गणितीय सुंदरता से भी मोहित हूं। मैं गणित और प्रौद्योगिकी के संगम की खोज करके अर्थपूर्ण समाधान बनाने का आनंद लेता हूं।",
+    "image": "/avinash.png"
+  },
+  "home": {
+    "title": {
+      "main": "जहाँ",
+      "highlight1": "डेव",
+      "continuation": "eloper शिल्प",
+      "line2": "समर्पित से मिलता है",
+      "highlight2": "प्रयास"
+    },
+    "subtitle": "श्रम से महारत आती है -",
+    "subtitle2": "यही देवश्रम का तरीका है",
+    "currentWork": {
+      "status": "वर्तमान में काम कर रहे हैं",
+      "project": "देवश्रम"
+    }
+  },
+  "quote": {
+    "text": "महान काम करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।",
+    "author": "स्टीव जॉब्स"
+  },
+  "skills": {
+    "languages": ["TypeScript", "Lua", "Python", "JavaScript"],
+    "databases": ["SQLite", "PostgreSQL", "Mongo"],
+    "frameworks": ["React", "Vue", "Dinsnake", "Discord.js", "Flask", "Express.js"],
+    "tools": ["VSCode", "Neovim", "Linux", "Figma", "XFCE", "Arch", "Git", "Font Awesome"],
+    "other": ["HTML", "CSS", "EJS", "SCSS", "REST", "Jinja"]
+  },
+  "contacts": {
+    "message": "मुझे फ्रीलांस अवसरों में रुचि है। हालांकि, यदि आपके पास कोई अन्य अनुरोध या प्रश्न है, तो मुझसे संपर्क करने में संकोच न करें",
+    "links": [
+      {
+        "type": "discord",
+        "href": "https://discord.com/users/523615093917745163",
+        "title": "avi892nash",
+        "displayText": "avi892nash"
+      },
+      {
+        "type": "github",
+        "href": "https://github.com/avi892nash",
+        "title": "avi892nash",
+        "displayText": "avi892nash"
+      },
+      {
+        "type": "linkedin",
+        "href": "https://www.linkedin.com/in/avi892nash/",
+        "title": "avi892nash",
+        "displayText": "avi892nash"
+      },
+      {
+        "type": "email",
+        "href": "mailto:avihsan8922@gmail.com",
+        "title": "avihsan8922@gmail.com",
+        "displayText": "avihsan8922@gmail.com"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "ChertNodes",
+      "description": "माइनक्राफ्ट सर्वर होस्टिंग",
+      "technologies": ["HTML", "SCSS", "Python", "Flask"],
+      "liveLink": "#",
+      "cachedLink": "#",
+      "theme": "brown",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app",
+      "featured": true
+    },
+    {
+      "title": "Kahoot Answers Viewer",
+      "description": "अपने काहूत प्रश्नोत्तरी के उत्तर प्राप्त करें",
+      "technologies": ["CSS", "Express", "Node.js"],
+      "liveLink": "#",
+      "theme": "purple",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app",
+      "featured": true
+    },
+    {
+      "title": "ProtectX",
+      "description": "डिस्कॉर्ड एंटी-क्रैश बॉट",
+      "technologies": ["React", "Express", "Discord.js", "Node.js"],
+      "liveLink": "#",
+      "cachedLink": "#",
+      "theme": "green",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app",
+      "featured": true
+    },
+    {
+      "title": "Kotik Bot",
+      "description": "बहु-कार्यात्मक डिस्कॉर्ड बॉट",
+      "technologies": ["HTML", "CSS", "JS"],
+      "liveLink": "#",
+      "theme": "brown",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app"
+    },
+    {
+      "title": "Portfolio",
+      "description": "आप इसे अभी उपयोग कर रहे हैं",
+      "technologies": ["Vue", "TS", "Less"],
+      "githubLink": "#",
+      "theme": "dark",
+      "image": "/api/placeholder/280/160",
+      "category": "complete-app"
+    },
+    {
+      "title": "Bot boilerplate",
+      "description": "टाइपस्क्रिप्ट के साथ स्केलेबल discord.js बॉट बनाना सेकंडों में शुरू करें",
+      "technologies": ["Discord.js", "TS", "JS"],
+      "githubLink": "#",
+      "theme": "brown",
+      "category": "small-project"
+    },
+    {
+      "title": "My blog",
+      "description": "Vue में लिखी गई मेरी भविष्य की ब्लॉग वेबसाइट का फ्रंट-एंड",
+      "technologies": ["VUE", "CSS", "JS"],
+      "githubLink": "#",
+      "theme": "brown",
+      "category": "small-project"
+    },
+    {
+      "title": "Chess pro",
+      "description": "शतरंज टूर्नामेंट देखने की सेवा के बारे में Figma लैंडिंग पेज",
+      "technologies": ["Figma"],
+      "figmaLink": "#",
+      "theme": "brown",
+      "category": "small-project"
+    },
+    {
+      "title": "आधुनिक वेब ऐप्स बनाना",
+      "description": "React और Next.js के साथ आधुनिक वेब एप्लिकेशन बनाने के लिए एक व्यापक गाइड",
+      "technologies": ["React", "Next.js", "TypeScript"],
+      "liveLink": "#",
+      "theme": "purple",
+      "category": "blog",
+      "featured": true
+    },
+    {
+      "title": "React में स्टेट मैनेजमेंट",
+      "description": "React एप्लिकेशन के लिए विभिन्न स्टेट मैनेजमेंट समाधानों को समझना",
+      "technologies": ["React", "Redux", "Zustand"],
+      "liveLink": "#",
+      "theme": "green",
+      "category": "blog"
+    },
+    {
+      "title": "TypeScript सर्वोत्तम प्रथाएं",
+      "description": "बेहतर कोड गुणवत्ता के लिए आवश्यक TypeScript पैटर्न और प्रथाएं",
+      "technologies": ["TypeScript", "JavaScript"],
+      "liveLink": "#",
+      "theme": "brown",
+      "category": "blog"
+    },
+    {
+      "title": "कोड फॉर्मेटर",
+      "description": "कई प्रोग्रामिंग भाषाओं के लिए एक शक्तिशाली कोड फॉर्मेटिंग टूल",
+      "technologies": ["Node.js", "CLI", "TypeScript"],
+      "githubLink": "#",
+      "liveLink": "#",
+      "theme": "green",
+      "category": "tool",
+      "featured": true
+    },
+    {
+      "title": "API टेस्टर",
+      "description": "विभिन्न HTTP विधियों के साथ REST API का परीक्षण करने के लिए सरल टूल",
+      "technologies": ["React", "JavaScript", "CSS"],
+      "githubLink": "#",
+      "liveLink": "#",
+      "theme": "purple",
+      "category": "tool"
+    },
+    {
+      "title": "रंग पैलेट जेनरेटर",
+      "description": "अपने डिज़ाइन प्रोजेक्ट के लिए सुंदर रंग पैलेट बनाएं",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "githubLink": "#",
+      "liveLink": "#",
+      "theme": "brown",
+      "category": "tool"
+    }
+  ]
+} 
