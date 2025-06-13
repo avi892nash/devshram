@@ -2,6 +2,7 @@ import QuoteCard from "@/components/QuoteCard";
 import Dots from "./Dots";
 import { firaCode, youngSerif } from "./Fonts";
 import Logo from "./Logo";
+import Image from 'next/image';
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import AboutMe from "@/components/AboutMe";
@@ -73,9 +74,11 @@ function Avinash() {
   return (
     <div className="relative flex flex-row flex-grow gap-2 justify-center ">
       <div className="flex relative flex-col justify-end md:justify-center">
-        <img
+        <Image
           src="/avinash.png"
           alt="Avinash"
+          width={384}
+          height={384}
           className="bottom-0 max-h-96 pl-8 pr-8"
         />
         <div className="absolute left-0 top-20">

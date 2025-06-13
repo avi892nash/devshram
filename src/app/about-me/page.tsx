@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import Dots from "../Dots";
 import Logo from "../Logo";
 
@@ -75,9 +76,11 @@ const AboutMePage = () => {
           <div className="relative flex justify-center items-center">
             <div className="relative">
               <div className="w-80 h-80 rounded-lg flex items-center justify-center relative overflow-hidden">
-                <img
+                <Image
                   src="/avinash.png"
                   alt="Avinash"
+                  width={320}
+                  height={320}
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import { getFeaturedProjects } from '@/data/projects';
+import { getFeaturedProjects, projects } from '@/data/projects';
 
 const ProjectList = () => {
-  const featuredProjects = getFeaturedProjects();
+  const featuredProjects = getFeaturedProjects(projects);
   
   return (
     <div className="flex flex-wrap gap-6 justify-start w-full">

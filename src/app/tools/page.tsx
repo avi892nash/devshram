@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react';
-import { getTools } from '@/data/projects';
+import { getTools, projects } from '@/data/projects';
 import ToolsList from '@/components/ToolsList';
 
 const ToolsPage = () => {
-  const tools = getTools();
+  const tools = getTools(projects);
   const featuredTools = tools.filter(tool => tool.featured);
   const regularTools = tools.filter(tool => !tool.featured);
 

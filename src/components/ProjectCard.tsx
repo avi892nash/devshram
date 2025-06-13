@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   title: string;
@@ -42,9 +43,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Image Section */}
       <div className="w-full aspect-video bg-transparent flex items-start justify-start">
         {image ? (
-          <img 
+          <Image 
             src={image} 
             alt={title}
+            width={640}
+            height={360}
             className="w-full h-full object-cover"
           />
         ) : (

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { getCompleteApps, getSmallProjects, getBlogPosts, getTools, type Project } from '@/data/projects';
+import { getCompleteApps, getSmallProjects, getBlogPosts, getTools, type Project, projects } from '@/data/projects';
 
 const getThemeClasses = (theme: string) => {
   switch (theme) {
@@ -66,10 +66,10 @@ const ProjectCard = ({ project, hasImage = false }: { project: Project, hasImage
 );
 
 const ProjectsPage = () => {
-  const completeApps = getCompleteApps();
-  const smallProjects = getSmallProjects();
-  const blogPosts = getBlogPosts();
-  const tools = getTools();
+  const completeApps = getCompleteApps(projects);
+  const smallProjects = getSmallProjects(projects);
+  const blogPosts = getBlogPosts(projects);
+  const tools = getTools(projects);
 
   return (
     <div className="min-h-screen w-full bg-lightBackground text-foreground">

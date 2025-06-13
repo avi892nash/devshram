@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react';
-import { getBlogPosts } from '@/data/projects';
+import { getBlogPosts, projects } from '@/data/projects';
 import BlogList from '@/components/BlogList';
 
 const BlogPage = () => {
-  const blogPosts = getBlogPosts();
+  const blogPosts = getBlogPosts(projects);
   const featuredPosts = blogPosts.filter(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);
 
