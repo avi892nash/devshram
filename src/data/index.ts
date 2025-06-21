@@ -1,4 +1,4 @@
-import data from './data.json';
+import data from '../translations/en.json';
 
 export interface Project {
   title: string;
