@@ -1,3 +1,5 @@
+"use client";
+
 import QuoteCard from "@/components/QuoteCard";
 import Dots from "./Dots";
 import { firaCode, youngSerif } from "./Fonts";

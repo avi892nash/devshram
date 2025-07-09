@@ -1,3 +1,5 @@
+"use client";
+
 import { useSyncExternalStore } from 'react';
 import selectedLanguageStore, { Language } from '@/state/external/language';
 import { SiteData } from '@/data';
