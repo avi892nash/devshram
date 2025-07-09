@@ -64,12 +64,64 @@ export interface Contacts {
   links: ContactLink[];
 }
 
+export interface Pages {
+  'about-me': {
+    title: string;
+    subtitle: string;
+    greeting: string;
+    intro1: string;
+    intro2: string;
+    skillsTitle: string;
+    funFactsTitle: string;
+    funFacts: string[];
+    readMore: string;
+  };
+  blog: {
+    title: string;
+    subtitle: string;
+    featuredPosts: string;
+    allPosts: string;
+    aboutTitle: string;
+    aboutDescription: string;
+  };
+  tools: {
+    title: string;
+    subtitle: string;
+    featuredTools: string;
+    allTools: string;
+    aboutTitle: string;
+    aboutDescription: string;
+  };
+  contact: {
+    title: string;
+    subtitle: string;
+    description: string;
+    supportTitle: string;
+    supportNumber: string;
+    messageTitle: string;
+    allMedia: string;
+  };
+  projects: {
+    title: string;
+    subtitle: string;
+    completeApps: string;
+    smallProjects: string;
+    blogPosts: string;
+    tools: string;
+    liveButton: string;
+    cachedButton: string;
+    githubButton: string;
+    figmaButton: string;
+  };
+}
+
 export interface SiteData {
   personal: Personal;
   home: HomeContent;
   quote: Quote;
   skills: Skills;
   contacts: Contacts;
+  pages: Pages;
   projects: Project[];
 }
 
@@ -102,4 +154,4 @@ export const getTools = (projects: Project[]): Project[] => {
 };
 
 // Export individual sections for easy access (fallback data)
-export const { personal, home, quote, skills, contacts, projects } = siteData; 
+export const { personal, home, quote, skills, contacts, pages, projects } = siteData; 

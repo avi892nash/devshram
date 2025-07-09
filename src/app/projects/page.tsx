@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { getCompleteApps, getSmallProjects, getBlogPosts, getTools, type Project, projects } from '@/data/projects';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const getThemeClasses = (theme: string) => {
   switch (theme) {
@@ -18,7 +19,16 @@ const getThemeClasses = (theme: string) => {
   }
 };
 
-const ProjectCard = ({ project, hasImage = false }: { project: Project, hasImage?: boolean }) => (
+const ProjectCard = ({ project, hasImage = false, buttons }: { 
+  project: Project, 
+  hasImage?: boolean, 
+  buttons: {
+    liveButton: string;
+    cachedButton: string;
+    githubButton: string;
+    figmaButton: string;
+  }
+}) => (
   <div className={`rounded-lg border overflow-hidden ${getThemeClasses(project.theme)}`}>
     {hasImage && (
       <div className="h-40 bg-[#2a1f1a] flex items-center justify-center relative overflow-hidden">
@@ -42,22 +52,22 @@ const ProjectCard = ({ project, hasImage = false }: { project: Project, hasImage
       <div className="flex gap-3">
         {project.liveLink && (
           <button className="px-4 py-2 border border-primary text-primary rounded hover:bg-primary/10 transition-colors text-sm">
-            Live ⟷
+            {buttons.liveButton}
           </button>
         )}
         {project.cachedLink && (
           <button className="px-4 py-2 border border-secondary text-secondary rounded hover:bg-secondary/10 transition-colors text-sm">
-            Cached ⚡
+            {buttons.cachedButton}
           </button>
         )}
         {project.githubLink && (
           <button className="px-4 py-2 border border-primary text-primary rounded hover:bg-primary/10 transition-colors text-sm">
-            Github ⟷
+            {buttons.githubButton}
           </button>
         )}
         {project.figmaLink && (
           <button className="px-4 py-2 border border-primary text-primary rounded hover:bg-primary/10 transition-colors text-sm">
-            Figma ⟷
+            {buttons.figmaButton}
           </button>
         )}
       </div>
@@ -66,6 +76,10 @@ const ProjectCard = ({ project, hasImage = false }: { project: Project, hasImage
 );
 
 const ProjectsPage = () => {
+  const { t } = useTranslation();
+  const { pages } = t;
+  const projectsPage = pages.projects;
+  
   const completeApps = getCompleteApps(projects);
   const smallProjects = getSmallProjects(projects);
   const blogPosts = getBlogPosts(projects);
@@ -77,21 +91,21 @@ const ProjectsPage = () => {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">
-                      <span className="text-primary">/</span>
-          <span className="text-primary">projects</span>
+            <span className="text-primary">/</span>
+            <span className="text-primary">{projectsPage.title}</span>
           </h1>
-                      <p className="text-secondary">All my work in one place</p>
+          <p className="text-secondary">{projectsPage.subtitle}</p>
         </div>
 
         {/* Complete Apps Section */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">complete-apps</span>
+            <span className="text-primary">{projectsPage.completeApps}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {completeApps.map((project, index) => (
-              <ProjectCard key={index} project={project} hasImage={true} />
+              <ProjectCard key={index} project={project} hasImage={true} buttons={projectsPage} />
             ))}
           </div>
         </div>
@@ -100,11 +114,11 @@ const ProjectsPage = () => {
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">small-projects</span>
+            <span className="text-primary">{projectsPage.smallProjects}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {smallProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} hasImage={false} />
+              <ProjectCard key={index} project={project} hasImage={false} buttons={projectsPage} />
             ))}
           </div>
         </div>
@@ -113,11 +127,11 @@ const ProjectsPage = () => {
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">blog-posts</span>
+            <span className="text-primary">{projectsPage.blogPosts}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((project, index) => (
-              <ProjectCard key={index} project={project} hasImage={true} />
+              <ProjectCard key={index} project={project} hasImage={true} buttons={projectsPage} />
             ))}
           </div>
         </div>
@@ -126,11 +140,11 @@ const ProjectsPage = () => {
         <div>
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">tools</span>
+            <span className="text-primary">{projectsPage.tools}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tools.map((project, index) => (
-              <ProjectCard key={index} project={project} hasImage={true} />
+              <ProjectCard key={index} project={project} hasImage={true} buttons={projectsPage} />
             ))}
           </div>
         </div>

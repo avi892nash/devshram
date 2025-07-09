@@ -2,8 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Dots from "@/app/Dots";
 import { personal } from "@/data";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function AboutMe() {
+  const { t } = useTranslation();
+  const { pages } = t;
+  const aboutMe = pages['about-me'];
+
   return (
     <section className="w-auto text-white flex items-center relative overflow-hidden">
       <div className="container relative">
@@ -19,7 +24,7 @@ export default function AboutMe() {
               <div className="ml-6 flex-1 h-px bg-primary min-w-[200px] max-w-[400px]"></div>
             </div>
             
-                          <div className="space-y-4 text-secondary leading-relaxed">
+            <div className="space-y-4 text-secondary leading-relaxed">
               <p className="text-base">
                 Hello, I&apos;m {personal.name}!
               </p>
@@ -34,7 +39,7 @@ export default function AboutMe() {
             </div>
             
             <button className="border-2 border-primary text-foreground px-6 py-3 hover:bg-muted transition-colors duration-300 flex items-center gap-2 group">
-              Read more
+              {aboutMe.readMore}
               <svg 
                 className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
                 fill="none" 
@@ -61,7 +66,7 @@ export default function AboutMe() {
             
             {/* Decorative dots positioned around the image */}
             <div className="absolute -top-8 -right-8">
-                              <Dots width={120} height={120} fill="fill-primary" />
+              <Dots width={120} height={120} fill="fill-primary" />
             </div>
             
             <div className="absolute -bottom-12 -left-8">

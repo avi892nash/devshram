@@ -2,8 +2,13 @@
 
 import React from 'react';
 import { useLinks } from '@/components/Links';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ContactPage = () => {
+  const { t } = useTranslation();
+  const { pages } = t;
+  const contact = pages.contact;
+  
   const socialLinks = useLinks({ 
     width: 32, 
     height: 32, 
@@ -31,9 +36,9 @@ const ContactPage = () => {
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">
             <span className="text-primary">/</span>
-            <span className="text-primary">contacts</span>
+            <span className="text-primary">{contact.title}</span>
           </h1>
-          <p className="text-secondary">Who am I?</p>
+          <p className="text-secondary">{contact.subtitle}</p>
         </div>
 
         {/* Main Content */}
@@ -41,7 +46,7 @@ const ContactPage = () => {
           {/* Left Side - Description */}
           <div className="space-y-6">
             <p className="text-secondary leading-relaxed text-lg">
-              I&apos;m interested in freelance opportunities. However, if you have other request or question, don&apos;t hesitate to contact me
+              {contact.description}
             </p>
           </div>
 
@@ -49,13 +54,13 @@ const ContactPage = () => {
           <div className="space-y-6">
             {/* Support Box */}
             <div className="border border-border bg-muted p-6">
-              <h3 className="text-foreground font-bold text-lg mb-4">Support me here</h3>
-              <p className="text-secondary text-lg font-mono">414950012069030</p>
+              <h3 className="text-foreground font-bold text-lg mb-4">{contact.supportTitle}</h3>
+              <p className="text-secondary text-lg font-mono">{contact.supportNumber}</p>
             </div>
 
             {/* Message Box */}
             <div className="border border-border bg-muted p-6">
-              <h3 className="text-foreground font-bold text-lg mb-4">Message me here</h3>
+              <h3 className="text-foreground font-bold text-lg mb-4">{contact.messageTitle}</h3>
               <div className="space-y-4">
                 {/* Social Links with Text */}
                 {contactLinksWithText}
@@ -68,7 +73,7 @@ const ContactPage = () => {
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">all-media</span>
+            <span className="text-primary">{contact.allMedia}</span>
           </h2>
           
           <div className="flex flex-col gap-4">

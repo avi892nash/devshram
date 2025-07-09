@@ -3,8 +3,13 @@
 import React from 'react';
 import { getBlogPosts, projects } from '@/data/projects';
 import BlogList from '@/components/BlogList';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const BlogPage = () => {
+  const { t } = useTranslation();
+  const { pages } = t;
+  const blog = pages.blog;
+  
   const blogPosts = getBlogPosts(projects);
   const featuredPosts = blogPosts.filter(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);
@@ -16,9 +21,9 @@ const BlogPage = () => {
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">
             <span className="text-primary">/</span>
-            <span className="text-primary">blog</span>
+            <span className="text-primary">{blog.title}</span>
           </h1>
-          <p className="text-secondary">My thoughts on development</p>
+          <p className="text-secondary">{blog.subtitle}</p>
         </div>
 
         {/* Featured Posts */}
@@ -26,7 +31,7 @@ const BlogPage = () => {
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-8">
               <span className="text-primary">#</span>
-              <span className="text-primary">featured-posts</span>
+              <span className="text-primary">{blog.featuredPosts}</span>
             </h2>
             <div className="w-full">
               <BlogList posts={featuredPosts} />
@@ -38,7 +43,7 @@ const BlogPage = () => {
         <div>
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">all-posts</span>
+            <span className="text-primary">{blog.allPosts}</span>
           </h2>
           <div className="w-full">
             <BlogList posts={regularPosts.length > 0 ? regularPosts : blogPosts} />
@@ -47,12 +52,9 @@ const BlogPage = () => {
 
         {/* Description Section */}
         <div className="mt-16 bg-muted border border-border rounded-lg p-6">
-          <h3 className="text-xl font-bold text-foreground mb-4">About This Blog</h3>
+          <h3 className="text-xl font-bold text-foreground mb-4">{blog.aboutTitle}</h3>
           <p className="text-secondary leading-relaxed">
-            Welcome to my development blog where I share insights, tutorials, and thoughts about 
-            software development, web technologies, and programming best practices. Here you&apos;ll find 
-            articles covering various topics from frontend frameworks to backend architectures, 
-            development workflows, and emerging technologies in the tech industry.
+            {blog.aboutDescription}
           </p>
         </div>
       </div>

@@ -4,24 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Dots from "../Dots";
 import Logo from "../Logo";
-
-const skills = {
-  Languages: ['TypeScript', 'Lua', 'Python', 'JavaScript'],
-  Other: ['HTML', 'CSS', 'EJS', 'SCSS', 'REST', 'Jinja'],
-  Tools: ['VSCode', 'Neovim', 'Linux', 'Figma', 'XFCE', 'Arch', 'Git', 'Font Awesome', 'KDE', 'fish'],
-  Databases: ['SQLite', 'PostgreSQL', 'Mongo'],
-  Frameworks: ['React', 'Vue', 'Disnake', 'Discord.js', 'Flask', 'Express.js']
-};
-
-const funFacts = [
-  'I like winter more than summer',
-  'I often bike with my friends',
-  'I like pizza and pasta',
-  'I was in Egypt, Poland and Turkey',
-  'My favorite movie is The Green Mile',
-  'I am still in school',
-  "I don&apos;t have any siblings"
-];
+import { useTranslation } from '@/hooks/useTranslation';
 
 const SkillCategory = ({ title, items }: { title: string, items: string[] }) => (
   <div className="border border-foreground bg-muted w-full">
@@ -47,6 +30,18 @@ const FunFactCard = ({ fact }: { fact: string }) => (
 );
 
 const AboutMePage = () => {
+  const { t } = useTranslation();
+  const { skills, pages } = t;
+  const aboutMe = pages['about-me'];
+
+  const skillsData = {
+    Languages: skills.languages,
+    Other: skills.other,
+    Tools: skills.tools,
+    Databases: skills.databases,
+    Frameworks: skills.frameworks
+  };
+
   return (
     <div className="min-h-screen w-full bg-lightBackground text-foreground relative">
       <div className="w-full max-w-[1300px] mx-auto px-6 py-12">
@@ -54,22 +49,22 @@ const AboutMePage = () => {
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">
             <span className="text-primary">/</span>
-            <span className="text-primary">about-me</span>
+            <span className="text-primary">{aboutMe.title}</span>
           </h1>
-          <p className="text-secondary">Who am I?</p>
+          <p className="text-secondary">{aboutMe.subtitle}</p>
         </div>
 
         {/* Introduction Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Hello, I&apos;m Avinash!</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">{aboutMe.greeting}</h2>
             
             <p className="text-secondary leading-relaxed">
-              I&apos;m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.
+              {aboutMe.intro1}
             </p>
             
             <p className="text-secondary leading-relaxed">
-              Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.
+              {aboutMe.intro2}
             </p>
           </div>
           
@@ -101,11 +96,11 @@ const AboutMePage = () => {
         <div className="mb-20">
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">skills</span>
+            <span className="text-primary">{aboutMe.skillsTitle}</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {Object.entries(skills).map(([category, items]) => (
+            {Object.entries(skillsData).map(([category, items]) => (
               <div key={category} className="w-full">
                 <SkillCategory title={category} items={items} />
               </div>
@@ -117,11 +112,11 @@ const AboutMePage = () => {
         <div className="relative">
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-primary">#</span>
-            <span className="text-primary">my-fun-facts</span>
+            <span className="text-primary">{aboutMe.funFactsTitle}</span>
           </h2>
           
           <div className="flex flex-wrap gap-4 justify-start max-w-4xl">
-            {funFacts.map((fact, index) => (
+            {aboutMe.funFacts.map((fact, index) => (
               <FunFactCard key={index} fact={fact} />
             ))}
           </div>

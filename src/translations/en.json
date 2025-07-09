@@ -1,10 +1,10 @@
 {
   "personal": {
-    "name": "Avinash",
-    "title": "Full Stack Developer",
-    "location": "India",
-    "description": "I am Avinash, a Full Stack Developer based in India. I specialize in creating applications, developer tools, and innovative projects that solve real-world problems.",
-    "passion": "I have a deep passion for mathematics, particularly computational mathematics and the visual techniques used in game development. I'm also fascinated by fractals and their mathematical beauty. I enjoy exploring the intersection of mathematics and technology to create meaningful solutions.",
+    "name": "Avinash Verma",
+    "title": "Software Development Engineer II",
+    "location": "Bengaluru, India",
+    "description": "I am Avinash Verma, a Software Development Engineer II at Juspay Technologies based in Bengaluru, India. I specialize in functional programming, compiler tooling, mobile app development, and performance optimization with expertise in PureScript, React, and full-stack development.",
+    "passion": "I have a deep passion for functional programming, compiler development, and performance optimization. I enjoy working on complex technical challenges, particularly in fintech and e-governance domains. I'm also actively involved in open-source contributions and love exploring the intersection of mathematics and technology.",
     "image": "/avinash.png"
   },
   "home": {
@@ -27,11 +27,11 @@
     "author": "Steve Jobs"
   },
   "skills": {
-    "languages": ["TypeScript", "Lua", "Python", "JavaScript"],
-    "databases": ["SQLite", "PostgreSQL", "Mongo"],
-    "frameworks": ["React", "Vue", "Dinsnake", "Discord.js", "Flask", "Express.js"],
-    "tools": ["VSCode", "Neovim", "Linux", "Figma", "XFCE", "Arch", "Git", "Font Awesome"],
-    "other": ["HTML", "CSS", "EJS", "SCSS", "REST", "Jinja"]
+    "languages": ["PureScript", "Haskell", "JavaScript", "TypeScript", "C++", "Go", "Rust", "Swift"],
+    "databases": ["SQLite", "PostgreSQL", "MongoDB"],
+    "frameworks": ["React", "React Reconciler", "Swift UI", "Android Compose", "Express.js", "Node.js"],
+    "tools": ["VSCode", "Git", "Jenkins", "Katalon Studio", "Appium", "Frida", "Xposed", "Figma"],
+    "other": ["HTML", "CSS", "REST", "OWASP", "Mobile Security", "Compiler Design", "AST/CST", "Assembly"]
   },
   "contacts": {
     "message": "I'm interested in freelance opportunities. However, if you have other request or question, don't hesitate to contact me",
@@ -50,7 +50,7 @@
       },
       {
         "type": "linkedin",
-        "href": "https://www.linkedin.com/in/avi892nash/",
+        "href": "https://linkedin.com/in/avi892nash",
         "title": "avi892nash",
         "displayText": "avi892nash"
       },
@@ -61,6 +61,62 @@
         "displayText": "avihsan8922@gmail.com"
       }
     ]
+  },
+  "pages": {
+    "about-me": {
+      "title": "about-me",
+      "subtitle": "Who am I?",
+      "greeting": "Hello, I'm Avinash!",
+      "intro1": "I'm a Software Development Engineer II at Juspay Technologies based in Bengaluru, India. I specialize in functional programming, compiler tooling, mobile app development, and performance optimization with expertise in PureScript, React, and full-stack development.",
+      "intro2": "I have a deep passion for functional programming, compiler development, and performance optimization. I enjoy working on complex technical challenges, particularly in fintech and e-governance domains. I'm also actively involved in open-source contributions and love exploring the intersection of mathematics and technology.",
+      "skillsTitle": "skills",
+      "funFactsTitle": "my-fun-facts",
+      "funFacts": [
+        "I like anime and manga. Best anime I've watched is 'Richman in the Game'",
+        "I like functional programming more than object-oriented programming",
+        "I often contribute to open-source projects",
+        "I enjoy working on complex systems like compilers, operating systems and internet protocols",
+        "I was a three-time regionalist in ACM-ICPC competitive coding"
+      ],
+      "readMore": "Read more"
+    },
+    "blog": {
+      "title": "blog",
+      "subtitle": "My thoughts on development",
+      "featuredPosts": "featured-posts",
+      "allPosts": "all-posts",
+      "aboutTitle": "About This Blog",
+      "aboutDescription": "Welcome to my development blog where I share insights, tutorials, and thoughts about software development, web technologies, and programming best practices. Here you'll find articles covering various topics from frontend frameworks to backend architectures, development workflows, and emerging technologies in the tech industry."
+    },
+    "tools": {
+      "title": "tools",
+      "subtitle": "Utilities and tools I've built",
+      "featuredTools": "featured-tools",
+      "allTools": "all-tools",
+      "aboutTitle": "About These Tools",
+      "aboutDescription": "These are various tools and utilities I've developed to solve common development problems or to experiment with new technologies. Each tool is designed to be simple, effective, and easy to use. Feel free to try them out and check the source code if you're interested in how they work."
+    },
+    "contact": {
+      "title": "contacts",
+      "subtitle": "Get in touch",
+      "description": "I'm interested in freelance opportunities. However, if you have other request or question, don't hesitate to contact me",
+      "supportTitle": "Support me here",
+      "supportNumber": "414950012069030",
+      "messageTitle": "Message me here",
+      "allMedia": "all-media"
+    },
+    "projects": {
+      "title": "projects",
+      "subtitle": "All my work in one place",
+      "completeApps": "complete-apps",
+      "smallProjects": "small-projects",
+      "blogPosts": "blog-posts",
+      "tools": "tools",
+      "liveButton": "Live ⟷",
+      "cachedButton": "Cached ⚡",
+      "githubButton": "Github ⟷",
+      "figmaButton": "Figma ⟷"
+    }
   },
   "projects": [
     {
