@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import DiscordLink from "./Links/Discord";
 import Github from "./Links/Github";
 import LinkedIn from "./Links/LinkedIn";
@@ -33,7 +34,7 @@ export function useLinks({
 }: UseLinksOptions) {
   const linkData: LinkItem[] = contacts.links;
 
-  const renderLink = (item: LinkItem, key: string) => {
+  const renderLink = (item: LinkItem, key: string, index: number) => {
     let IconComponent;
     
     switch (item.type) {
@@ -63,34 +64,66 @@ export function useLinks({
 
     if (showText) {
       return (
-        <div className={itemClassName} key={key}>
-          <a 
+        <motion.div 
+          className={`${itemClassName} overflow-hidden`} 
+          key={key}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          whileHover={{ 
+            scale: 1.02,
+            transition: { duration: 0.2 }
+          }}
+        >
+          <motion.a 
             href={item.href} 
             target="_blank" 
             rel="noopener noreferrer"
             title={item.title}
-            className={linkClassName}
+            className={`${linkClassName} inline-block`}
+            whileHover={{ 
+              scale: 1.05,
+              rotate: 2,
+              transition: { duration: 0.2 }
+            }}
+            whileTap={{ scale: 0.95 }}
           >
             {iconElement}
-          </a>
-          <span className={textClassName}>{item.displayText}</span>
-        </div>
+          </motion.a>
+          <motion.span 
+            className={textClassName}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: (index * 0.1) + 0.2 }}
+          >
+            {item.displayText}
+          </motion.span>
+        </motion.div>
       );
     }
 
     return (
-      <a 
+      <motion.a 
         href={item.href} 
         target="_blank" 
         rel="noopener noreferrer"
         title={item.title}
-        className={linkClassName}
+        className={`${linkClassName} inline-block overflow-hidden`}
         key={key}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4, delay: index * 0.1 }}
+        whileHover={{ 
+          scale: 1.05,
+          rotate: 3,
+          transition: { duration: 0.2 }
+        }}
+        whileTap={{ scale: 0.95 }}
       >
         {iconElement}
-      </a>
+      </motion.a>
     );
   };
 
-  return linkData.map((item, index) => renderLink(item, `${item.type}-${index}`));
+  return linkData.map((item, index) => renderLink(item, `${item.type}-${index}`, index));
 }

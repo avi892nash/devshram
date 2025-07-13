@@ -20,7 +20,7 @@ const ToolsList: React.FC<ToolsListProps> = ({ tools, limit }) => {
             technologies={tool.technologies}
             liveLink={tool.liveLink || '#'}
             cachedLink={tool.cachedLink}
-            theme={tool.theme as 'brown' | 'dark-green' | 'purple'}
+            theme={tool.theme as 'brown' | 'dark-green' | 'purple' | 'green' | 'dark'}
             image={tool.image}
             buttonText="Try Tool"
           />

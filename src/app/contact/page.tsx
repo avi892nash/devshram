@@ -1,8 +1,11 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLinks } from '@/components/Links';
 import { useTranslation } from '@/hooks/useTranslation';
+import AnimatedSection from '@/components/AnimatedSection';
+import AnimatedText from '@/components/AnimatedText';
 
 const ContactPage = () => {
   const { t } = useTranslation();
@@ -30,56 +33,90 @@ const ContactPage = () => {
   });
 
   return (
-    <div className="min-h-screen w-full bg-lightBackground text-foreground">
+    <div className="min-h-screen w-full text-foreground page-background">
       <div className="w-full max-w-[1300px] mx-auto px-6 py-12">
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-2">
-            <span className="text-primary">/</span>
-            <span className="text-primary">{contact.title}</span>
-          </h1>
-          <p className="text-secondary">{contact.subtitle}</p>
-        </div>
+        <motion.div 
+          className="mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <AnimatedText
+            text={`/${contact.title}`}
+            className="text-4xl font-bold mb-2 text-primary"
+            type="fade"
+            delay={0.2}
+          />
+          <AnimatedText
+            text={contact.subtitle}
+            className="text-secondary"
+            type="fade"
+            delay={0.4}
+          />
+        </motion.div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Left Side - Description */}
-          <div className="space-y-6">
-            <p className="text-secondary leading-relaxed text-lg">
-              {contact.description}
-            </p>
-          </div>
+          <AnimatedSection direction="left" delay={0.3}>
+            <div className="space-y-6">
+              <p className="text-secondary leading-relaxed text-lg">
+                {contact.description}
+              </p>
+            </div>
+          </AnimatedSection>
 
           {/* Right Side - Contact Boxes */}
-          <div className="space-y-6">
-            {/* Support Box */}
-            <div className="border border-border bg-muted p-6">
-              <h3 className="text-foreground font-bold text-lg mb-4">{contact.supportTitle}</h3>
-              <p className="text-secondary text-lg font-mono">{contact.supportNumber}</p>
-            </div>
+          <AnimatedSection direction="right" delay={0.5}>
+            <div className="space-y-6">
+              {/* Support Box */}
+              <motion.div 
+                className="border border-border bg-muted p-6"
+                whileHover={{ 
+                  scale: 1.02,
+                  borderColor: '#C778DD',
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <h3 className="text-foreground font-bold text-lg mb-4">{contact.supportTitle}</h3>
+                <p className="text-secondary text-lg font-mono">{contact.supportNumber}</p>
+              </motion.div>
 
-            {/* Message Box */}
-            <div className="border border-border bg-muted p-6">
-              <h3 className="text-foreground font-bold text-lg mb-4">{contact.messageTitle}</h3>
-              <div className="space-y-4">
-                {/* Social Links with Text */}
-                {contactLinksWithText}
-              </div>
+              {/* Message Box */}
+              <motion.div 
+                className="border border-border bg-muted p-6"
+                whileHover={{ 
+                  scale: 1.02,
+                  borderColor: '#C778DD',
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <h3 className="text-foreground font-bold text-lg mb-4">{contact.messageTitle}</h3>
+                <div className="space-y-4">
+                  {/* Social Links with Text */}
+                  {contactLinksWithText}
+                </div>
+              </motion.div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
 
         {/* Social Media Section */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-8">
-            <span className="text-primary">#</span>
-            <span className="text-primary">{contact.allMedia}</span>
-          </h2>
-          
-          <div className="flex flex-col gap-4">
-            {socialLinks}
+        <AnimatedSection direction="up" delay={0.7}>
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-8">
+              <span className="text-primary">#</span>
+              <span className="text-primary">{contact.allMedia}</span>
+            </h2>
+            
+            <div className="flex flex-col gap-4">
+              {socialLinks}
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </div>
   );

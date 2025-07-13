@@ -8,7 +8,7 @@ import CrossIcon from "./CrossIcon";
 import useNavList from "../state/hooks/NavList";
 import { useLinks } from "@/components/Links";
 import SocialSidebar from "@/components/SocialSidebar";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const Header = ({
   children,
@@ -21,11 +21,28 @@ export const Header = ({
   const [showMenu, setShowMenu] = React.useState(false);
   const navList = useNavList();
   const pathname = usePathname();
+  const router = useRouter();
   const isHomePage = pathname === "/";
+
+  // Prefetch all main pages when component mounts
+  React.useEffect(() => {
+    const pagesToPrefetch = [
+      '/',
+      '/projects',
+      '/blog', 
+      '/tools',
+      '/about-me',
+      '/contact'
+    ];
+    
+    pagesToPrefetch.forEach(page => {
+      router.prefetch(page);
+    });
+  }, [router]);
   return (
     <>
-      <div className="overflow-auto md:justify-center bg-background">
-        <div className="relative flex flex-grow">
+      <div className="md:justify-center bg-transparent">
+        <div className="flex flex-grow">
           <div className="hidden md:flex flex-grow px-8 ">
             <div>
               <div className="sticky top-0">
@@ -98,22 +115,22 @@ export const Header = ({
 
 function NavListMenu({ onItemClick }: { onItemClick: () => void }) {
   const navList = useNavList(onItemClick);
-  const linkList = useLinks({ width: 80, height: 80, fill : "fill-foreground" });
+  const linkList = useLinks({ width: 64, height: 64, fill : "fill-foreground" });
   return (
     <div className="flex flex-grow flex-col p-6 bg-background">
       <div className="flex flex-col space-y-8 text-foreground text-3xl pt-8">
         {navList}
       </div>
-      <div className="flex flex-grow justify-center">
+      <div className="flex flex-grow justify-center items-center">
         <div className="flex items-center">
-      <div className="grid grid-cols-3 grid-rows-2 items-center gap-6">
-        {linkList.map((link, index) => (
-          <div key={index} className="w-16 h-16 flex items-center justify-center">
-            {link}
+          <div className="grid grid-cols-3 grid-rows-2 items-center gap-8 p-4">
+            {linkList.map((link, index) => (
+              <div key={index} className="w-20 h-20 flex items-center justify-center p-2 overflow-visible">
+                {link}
+              </div>
+            ))}
           </div>
-        ))}
         </div>
-      </div>
       </div>
     </div>
   );

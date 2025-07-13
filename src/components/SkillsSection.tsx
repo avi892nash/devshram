@@ -3,21 +3,34 @@ import Logo from '@/app/Logo';
 import Square from '@/app/Square';
 import React from 'react';
 import { skills } from '@/data';
+import { motion } from 'framer-motion';
 
 const SkillsSection = () => {
   return (
     <div className="w-auto">
       {/* Header - Similar to ProjectsHeader */}
-      <div className="flex justify-between items-center mb-8 relative">
+      <motion.div 
+        className="flex justify-between items-center mb-8 relative"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="flex items-center">
           <h2 className="text-3xl font-bold text-white">
             <span className="text-primary">#</span>
             <span className="text-foreground">skills</span>
           </h2>
           {/* Horizontal Line extending to the right */}
-          <div className="ml-6 flex-1 h-px bg-primary"></div>
+          <motion.div 
+            className="ml-6 flex-1 h-px bg-primary"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          ></motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Content with relative layout */}
       <div className="py-12 flex-grow">
@@ -38,51 +51,95 @@ const SkillsSection = () => {
           </div>
 
           {/* Skills boxes (right aligned in absolute position) */}
-          <div className="absolute top-0 right-0 flex gap-6">
+          <motion.div 
+            className="absolute top-0 right-0 flex gap-6"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             {/* Column 1 */}
-            <div className="flex flex-col gap-4">
-              <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
+            <motion.div 
+              className="flex flex-col gap-4"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <motion.div 
+                className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent"
+                whileHover={{ borderColor: "rgb(59 130 246)" }}
+                transition={{ duration: 0.3 }}
+              >
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Languages</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
                   {skills.languages.join(' ')}
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
+              <motion.div 
+                className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent"
+                whileHover={{ borderColor: "rgb(59 130 246)" }}
+                transition={{ duration: 0.3 }}
+              >
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Other</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
                   {skills.other.join(' ')}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Column 2 */}
-            <div className="flex flex-col gap-4">
-              <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
+            <motion.div 
+              className="flex flex-col gap-4"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <motion.div 
+                className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent"
+                whileHover={{ borderColor: "rgb(59 130 246)" }}
+                transition={{ duration: 0.3 }}
+              >
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Databases</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
                   {skills.databases.join(' ')}
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
+              <motion.div 
+                className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent"
+                whileHover={{ borderColor: "rgb(59 130 246)" }}
+                transition={{ duration: 0.3 }}
+              >
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Frameworks</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
                   {skills.frameworks.join(' ')}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Column 3 */}
-            <div className="flex flex-col gap-4">
-              <div className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent">
+            <motion.div 
+              className="flex flex-col gap-4"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <motion.div 
+                className="border border-border min-h-[120px] min-w-[200px] flex flex-col bg-transparent"
+                whileHover={{ borderColor: "rgb(59 130 246)" }}
+                transition={{ duration: 0.3 }}
+              >
                 <h3 className="font-bold p-3 border-b border-border text-foreground">Tools</h3>
                 <div className="p-3 text-sm text-foreground flex-1">
                   {skills.tools.join(' ')}
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ const ToolsPage = () => {
   const regularTools = toolsData.filter(tool => !tool.featured);
 
   return (
-    <div className="min-h-screen w-full bg-lightBackground text-foreground">
+    <div className="min-h-screen w-full text-foreground page-background">
       <div className="w-full max-w-[1300px] mx-auto px-6 py-12">
         {/* Header */}
         <div className="mb-12">

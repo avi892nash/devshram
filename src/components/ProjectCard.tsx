@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface ProjectCardProps {
   title: string;
@@ -7,7 +8,7 @@ interface ProjectCardProps {
   technologies: string[];
   liveLink: string;
   cachedLink?: string;
-  theme: 'brown' | 'dark-green' | 'purple';
+  theme: 'brown' | 'dark-green' | 'purple' | 'green' | 'dark';
   logo?: string;
   subtitle?: string;
   features?: string[];
@@ -39,7 +40,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const themeClasses = getThemeClasses();
   
   return (
-    <div className={`border overflow-hidden ${themeClasses.card} border-opacity-50`}>
+    <motion.div 
+      className={`border overflow-hidden ${themeClasses.card} border-opacity-50`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      whileHover={{ 
+        y: -4,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+    >
       {/* Image Section */}
       <div className="w-full aspect-video bg-transparent flex items-start justify-start">
         {image ? (
@@ -123,7 +133,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

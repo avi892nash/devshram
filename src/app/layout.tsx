@@ -3,6 +3,7 @@ import "./globals.css";
 import { youngSerif, firaCode } from "./Fonts";
 import Header from "./Header";
 import Footer from "@/components/Footer";
+import ThreeGradientBackground from "@/components/ThreeGradientBackground";
 
 export const metadata: Metadata = {
   title: "Devshram",
@@ -20,7 +21,8 @@ export default function RootLayout({
       <body
         className={`${youngSerif.className} ${firaCode.className} antialiased`}
       >
-        <div className="full-height flex flex-col justify-center">
+        <div className="min-h-screen flex flex-col justify-center bg-transparent relative">
+          <ThreeGradientBackground />
           <Header footer={<Footer></Footer>} > {children} 
           </Header>
         </div>

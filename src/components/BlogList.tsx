@@ -20,7 +20,7 @@ const BlogList: React.FC<BlogListProps> = ({ posts, limit }) => {
             technologies={post.technologies}
             liveLink={post.liveLink || '#'}
             cachedLink={post.cachedLink}
-            theme={post.theme as 'brown' | 'dark-green' | 'purple'}
+            theme={post.theme as 'brown' | 'dark-green' | 'purple' | 'green' | 'dark'}
             image={post.image}
             buttonText="Read"
           />
