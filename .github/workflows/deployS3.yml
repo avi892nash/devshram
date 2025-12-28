@@ -1,29 +1,80 @@
-name: Build and Deploy to S3
+name: Release and Deploy
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 env:
-  AWS_REGION: ap-south-1  
-  S3_BUCKET: devshram.com 
+  AWS_REGION: ap-south-1
+  S3_BUCKET: devshram.com
   CLOUDFRONT_DISTRIBUTION_ID: E2RU8A6DN1OCFF
+  NODE_ENV: production
+
 permissions:
   id-token: write
-  contents: read
+  contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
-  build-and-deploy:
+  release:
     runs-on: ubuntu-latest
-    
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    outputs:
+      new_release_published: ${{ steps.semantic.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic.outputs.new_release_version }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
           cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run semantic-release
+        id: semantic
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: release
+    if: always() && (needs.release.outputs.new_release_published == 'true' || github.event_name == 'workflow_dispatch')
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ needs.release.outputs.new_release_version && format('v{0}', needs.release.outputs.new_release_version) || github.ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Get version
+        id: version
+        run: |
+          if [ "${{ needs.release.outputs.new_release_version }}" != "" ]; then
+            VERSION=${{ needs.release.outputs.new_release_version }}
+          else
+            VERSION=$(node -p "require('./package.json').version")
+          fi
+          echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+          echo "📌 Deploying version: ${VERSION}"
 
       - name: Install dependencies
         run: npm ci
@@ -32,13 +83,16 @@ jobs:
         run: npm run build
         env:
           CI: true
+          NODE_ENV: production
 
       - name: Check build output
         run: |
-          if [ ! -d "./out" ]; then
-            echo "Build output directory not found!"
+          if [ ! -d "./.next" ]; then
+            echo "SSR build output directory (.next) not found!"
             exit 1
           fi
+          echo "Building version: ${{ steps.version.outputs.VERSION }}"
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -47,20 +101,20 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          # Sync everything except HTML files with long-term caching
-          aws s3 sync ./out s3://${{ env.S3_BUCKET }}/devshram \
-            --delete \
-            --exclude "*.html" \
+          VERSION=${{ steps.version.outputs.VERSION }}
+          BASE_PATH="s3://${{ env.S3_BUCKET }}/devshram/v${VERSION}"
+
+          echo "Deploying version ${VERSION} to ${BASE_PATH}"
+
+          # Upload .next directory as _next with long-term caching
+          aws s3 sync ./.next ${BASE_PATH}/_next \
             --cache-control "public,max-age=31536000,immutable"
 
-          # Upload HTML files with cache validation headers (no caching)
-          aws s3 cp ./out s3://${{ env.S3_BUCKET }}/devshram \
-            --recursive \
-            --exclude "*" \
-            --include "*.html" \
-            --cache-control "public,max-age=0,must-revalidate" \
-            --metadata-directive REPLACE
+          # Upload public folder with long-term caching
+          if [ -d "./public" ]; then
+            aws s3 sync ./public ${BASE_PATH}/public \
+              --cache-control "public,max-age=31536000,immutable"
+          fi
 
-          # Invalidate CloudFront cache so changes propagate immediately
-          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          echo "✅ Successfully deployed version ${VERSION}"
 
