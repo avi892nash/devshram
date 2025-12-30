@@ -66,7 +66,47 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
           echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
-          echo "📌 Deploying version: ${VERSION}"
+          echo "📌 Version: ${VERSION}"
+
+      - name: Create SSR artifact
+        if: steps.semantic.outputs.new_release_published == 'true'
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          ARTIFACT_NAME="devshram-ssr-v${VERSION}.tar.gz"
+
+          echo "📦 Creating SSR artifact: ${ARTIFACT_NAME}"
+
+          # Make start script executable
+          chmod +x start-server.sh
+
+          # Create artifact with necessary SSR files
+          tar -czf ${ARTIFACT_NAME} \
+            .next \
+            package.json \
+            package-lock.json \
+            public \
+            start-server.sh \
+            DEPLOYMENT.md
+
+          echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> $GITHUB_ENV
+          echo "✅ Artifact created: ${ARTIFACT_NAME}"
+          ls -lh ${ARTIFACT_NAME}
+
+      - name: Upload SSR artifact to release
+        if: steps.semantic.outputs.new_release_published == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          ARTIFACT_NAME="${{ env.ARTIFACT_NAME }}"
+
+          echo "📤 Uploading ${ARTIFACT_NAME} to release v${VERSION}"
+
+          gh release upload "v${VERSION}" "${ARTIFACT_NAME}" \
+            --clobber \
+            --repo ${{ github.repository }}
+
+          echo "✅ Artifact uploaded to release"
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -76,13 +116,12 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          VERSION=${{ steps.version.outputs.VERSION }}
-          BASE_PATH="s3://${{ env.S3_BUCKET }}/devshram/v${VERSION}"
+          BASE_PATH="s3://${{ env.S3_BUCKET }}/devshram"
 
-          echo "🚀 Deploying version ${VERSION} to ${BASE_PATH}"
+          echo "🚀 Deploying to ${BASE_PATH}"
 
-          # Upload .next directory as _next with long-term caching
-          aws s3 sync ./.next ${BASE_PATH}/_next \
+          # Upload .next/static directory to _next/static with long-term caching
+          aws s3 sync ./.next/static ${BASE_PATH}/_next/static \
             --cache-control "public,max-age=31536000,immutable"
 
           # Upload public folder with long-term caching
@@ -91,5 +130,5 @@ jobs:
               --cache-control "public,max-age=31536000,immutable"
           fi
 
-          echo "✅ Successfully deployed version ${VERSION}"
+          echo "✅ Successfully deployed to S3"
 

@@ -227,3 +227,136 @@ s3://devshram.com/
 - Ensure deployment completed successfully
 - Check S3 path matches expected version
 - Verify CloudFront distribution is configured correctly
+
+## SSR Server Deployment
+
+### Quick Start with Artifact
+
+Each release includes a pre-built SSR artifact that can be deployed to any server.
+
+1. **Download the artifact** from the GitHub release:
+   ```bash
+   wget https://github.com/[your-org]/devshram/releases/download/v0.1.0/devshram-ssr-v0.1.0.tar.gz
+   ```
+
+2. **Extract the artifact**:
+   ```bash
+   mkdir devshram-app
+   tar -xzf devshram-ssr-v0.1.0.tar.gz -C devshram-app
+   cd devshram-app
+   ```
+
+3. **Run the server**:
+   ```bash
+   chmod +x start-server.sh
+   ./start-server.sh
+   ```
+
+The server will start on port 3000 by default.
+
+### Configuration
+
+#### Custom Port
+Set the `PORT` environment variable:
+```bash
+PORT=8080 ./start-server.sh
+```
+
+#### Environment Variables
+Create a `.env.local` file with your environment-specific configuration:
+```bash
+NODE_ENV=production
+PORT=3000
+# Add other environment variables as needed
+```
+
+### Production Deployment Options
+
+#### Using PM2 (Recommended)
+```bash
+npm install -g pm2
+pm2 start npm --name "devshram" -- start
+pm2 save
+pm2 startup
+```
+
+To update to a new version:
+```bash
+pm2 stop devshram
+# Download and extract new artifact
+pm2 restart devshram
+```
+
+#### Using systemd
+Create `/etc/systemd/system/devshram.service`:
+```ini
+[Unit]
+Description=DevShram SSR Server
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/path/to/devshram-app
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable and start:
+```bash
+sudo systemctl enable devshram
+sudo systemctl start devshram
+sudo systemctl status devshram
+```
+
+#### Using Docker
+```bash
+# Coming soon - Docker image deployment
+```
+
+### Requirements
+- Node.js 22 or higher
+- npm (included with Node.js)
+- 512MB RAM minimum (1GB recommended)
+
+### Artifact Contents
+The SSR artifact includes:
+- `.next/` - Complete Next.js build output
+- `package.json` and `package-lock.json` - Dependencies
+- `public/` - Static assets
+- `start-server.sh` - Server startup script
+
+### SSR Troubleshooting
+
+#### Dependencies not installed
+If you see errors about missing modules:
+```bash
+npm ci --production
+```
+
+#### Port already in use
+Change the port:
+```bash
+PORT=8080 ./start-server.sh
+```
+
+#### Permission denied
+Make the script executable:
+```bash
+chmod +x start-server.sh
+```
+
+#### Server crashes on startup
+Check the logs:
+```bash
+# PM2
+pm2 logs devshram
+
+# systemd
+journalctl -u devshram -f
+```
