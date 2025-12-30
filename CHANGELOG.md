@@ -1,3 +1,10 @@
+## [0.0.8](https://github.com/avi892nash/devshram/compare/v0.0.7...v0.0.8) (2025-12-30)
+
+
+### Bug Fixes
+
+* fixed the assetsURL ([cf350ae](https://github.com/avi892nash/devshram/commit/cf350aece4cc27ffcfdf0f112b7c7221ff6ab1ec))
+
 ## [0.0.7](https://github.com/avi892nash/devshram/compare/v0.0.6...v0.0.7) (2025-12-30)
 
 
