@@ -1,3 +1,10 @@
+## [0.0.6](https://github.com/avi892nash/devshram/compare/v0.0.5...v0.0.6) (2025-12-30)
+
+
+### Bug Fixes
+
+* artifact and CDN assets upload pipeline ([f41909a](https://github.com/avi892nash/devshram/commit/f41909adb733b4a0bf8c9bebaf84da7395d9107e))
+
 ## [0.0.5](https://github.com/avi892nash/devshram/compare/v0.0.4...v0.0.5) (2025-12-28)
 
 
