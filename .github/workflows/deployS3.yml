@@ -57,9 +57,9 @@ jobs:
       - name: Run semantic-release
         id: semantic
         if: github.event_name == 'push'
+        uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
 
       - name: Get version
         id: version
