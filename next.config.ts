@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
-import { version } from './package.json';
 
 const CDN_URL = process.env.NODE_ENV === 'production'
-    ? `https://assets.devshram.com/devshram/v${version}`
+    ? 'https://assets.devshram.com/devshram'
     : '';
 
 const nextConfig: NextConfig = {

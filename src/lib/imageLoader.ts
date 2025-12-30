@@ -1,5 +1,3 @@
-import { version } from '../../package.json';
-
 interface ImageLoaderProps {
     src: string;
     width: number;
@@ -7,9 +5,9 @@ interface ImageLoaderProps {
 }
 
 export default function imageLoader({ src }: ImageLoaderProps) {
-    // In production, load images from versioned CDN
+    // In production, load images from CDN
     if (process.env.NODE_ENV === 'production') {
-        const CDN_URL = `https://assets.devshram.com/devshram/v${version}`;
+        const CDN_URL = 'https://assets.devshram.com/devshram';
 
         // If src is already an absolute URL, return as-is
         if (src.startsWith('http://') || src.startsWith('https://')) {
@@ -17,8 +15,8 @@ export default function imageLoader({ src }: ImageLoaderProps) {
         }
 
         // For relative URLs from public folder (e.g., /avinash.png)
-        // Return the CDN URL - width and quality are ignored since images are unoptimized
-        return `${CDN_URL}${src}`;
+        // Return the CDN URL with /public prefix
+        return `${CDN_URL}/public${src}`;
     }
 
     // In development, use local paths
