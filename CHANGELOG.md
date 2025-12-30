@@ -1,3 +1,10 @@
+## [0.0.7](https://github.com/avi892nash/devshram/compare/v0.0.6...v0.0.7) (2025-12-30)
+
+
+### Bug Fixes
+
+* fixing artifact attach on release ([f7e3ba3](https://github.com/avi892nash/devshram/commit/f7e3ba376aaf6ba58a409eb145869df2c6f78733))
+
 ## [0.0.6](https://github.com/avi892nash/devshram/compare/v0.0.5...v0.0.6) (2025-12-30)
 
 
