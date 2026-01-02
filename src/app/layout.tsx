@@ -4,6 +4,7 @@ import { youngSerif, firaCode } from "./Fonts";
 import Header from "./Header";
 import Footer from "@/components/Footer";
 import BackgroundCanvas from "@/components/BackgroundCanvas";
+import packageJson from "../../package.json";
 
 export const metadata: Metadata = {
   title: "Devshram",
@@ -18,6 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.VERSION = '${packageJson.version}';`,
+          }}
+        />
+      </head>
       <body
         className={`${youngSerif.className} ${firaCode.className} antialiased`}
       >
