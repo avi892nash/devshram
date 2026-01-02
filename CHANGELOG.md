@@ -1,3 +1,10 @@
+## [0.0.9](https://github.com/avi892nash/devshram/compare/v0.0.8...v0.0.9) (2026-01-02)
+
+
+### Bug Fixes
+
+* **perf:** replaced the background canvas with optimsed one ([71b21f3](https://github.com/avi892nash/devshram/commit/71b21f3dfb89f0769de6e9b1ffffb1fea368ea80))
+
 ## [0.0.8](https://github.com/avi892nash/devshram/compare/v0.0.7...v0.0.8) (2025-12-30)
 
 
