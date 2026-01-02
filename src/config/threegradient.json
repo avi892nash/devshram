@@ -2,16 +2,14 @@
   "dotRadius": 2,
   "dotSpacing": 50,
   "enableLightAnimation": true,
-  "lightAnimationSpeed": 0.001,
-  "lightAnimationInterval": 1000,
-  "lightBrightness": 200000,
+  "lightAnimationSpeed": 0.0007,
+  "trailLengthPercent": 0.3,
+  "trailPointCount": 20,
+  "initialAnimationCount": 3,
   "colors": {
-    "dot": "0xaaaaaa",
-    "light": "0xffffff",
-    "lightBall": "0xffffff",
-    "lightEmissive": "0xffffff",
-    "ambientLight": "0xffffff",
-    "trailParticle": "0xffffff",
+    "dot": "rgb(50, 50, 50)",
+    "dotActive": "#FFFFFF",
+    "background": "#000000",
     "backgroundGradientStart": "#0a0a0a",
     "backgroundGradientEnd": "#1a1a1a"
   }
