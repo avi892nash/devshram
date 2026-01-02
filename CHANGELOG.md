@@ -1,3 +1,10 @@
+## [0.0.10](https://github.com/avi892nash/devshram/compare/v0.0.9...v0.0.10) (2026-01-02)
+
+
+### Bug Fixes
+
+* setting version in js code ([7446b16](https://github.com/avi892nash/devshram/commit/7446b16b2bc32661f5bbb46c0bdf88915b2f57e7))
+
 ## [0.0.9](https://github.com/avi892nash/devshram/compare/v0.0.8...v0.0.9) (2026-01-02)
 
 
