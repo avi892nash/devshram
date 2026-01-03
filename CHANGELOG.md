@@ -1,3 +1,10 @@
+## [0.0.11](https://github.com/avi892nash/devshram/compare/v0.0.10...v0.0.11) (2026-01-03)
+
+
+### Bug Fixes
+
+* **update:** updated the values of project and fixed the bug of language change ([ae05266](https://github.com/avi892nash/devshram/commit/ae052669a4efb8512524c2bf42c72cbf0edaee07))
+
 ## [0.0.10](https://github.com/avi892nash/devshram/compare/v0.0.9...v0.0.10) (2026-01-02)
 
 
