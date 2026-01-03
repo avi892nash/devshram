@@ -1,15 +1,15 @@
 "use client";
 
 import React from 'react';
-import { getBlogPosts, projects } from '@/data/projects';
+import { getBlogPosts } from '@/data/projects';
 import BlogList from '@/components/BlogList';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const BlogPage = () => {
   const { t } = useTranslation();
-  const { pages } = t;
+  const { pages, projects } = t;
   const blog = pages.blog;
-  
+
   const blogPosts = getBlogPosts(projects);
   const featuredPosts = blogPosts.filter(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);

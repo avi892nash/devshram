@@ -1,15 +1,15 @@
 "use client";
 
 import React from 'react';
-import { getTools, projects } from '@/data/projects';
+import { getTools } from '@/data/projects';
 import ToolsList from '@/components/ToolsList';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const ToolsPage = () => {
   const { t } = useTranslation();
-  const { pages } = t;
+  const { pages, projects } = t;
   const tools = pages.tools;
-  
+
   const toolsData = getTools(projects);
   const featuredTools = toolsData.filter(tool => tool.featured);
   const regularTools = toolsData.filter(tool => !tool.featured);

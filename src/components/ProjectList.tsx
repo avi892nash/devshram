@@ -1,8 +1,11 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import { getFeaturedProjects, projects } from '@/data/projects';
+import { getFeaturedProjects } from '@/data/projects';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ProjectList = () => {
+  const { t } = useTranslation();
+  const { projects } = t;
   const featuredProjects = getFeaturedProjects(projects);
   
   return (

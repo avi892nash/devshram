@@ -120,78 +120,26 @@
   },
   "projects": [
     {
-      "title": "ChertNodes",
-      "description": "Minecraft servers hosting",
-      "technologies": ["HTML", "SCSS", "Python", "Flask"],
-      "liveLink": "#",
-      "cachedLink": "#",
-      "theme": "brown",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app",
-      "featured": true
-    },
-    {
-      "title": "Kahoot Answers Viewer",
-      "description": "Get answers to your kahoot quiz",
-      "technologies": ["CSS", "Express", "Node.js"],
-      "liveLink": "#",
-      "theme": "purple",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app",
-      "featured": true
-    },
-    {
-      "title": "ProtectX",
-      "description": "Discord anti-crash bot",
-      "technologies": ["React", "Express", "Discord.js", "Node.js"],
-      "liveLink": "#",
-      "cachedLink": "#",
-      "theme": "green",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app",
-      "featured": true
-    },
-    {
-      "title": "Kotik Bot",
-      "description": "Multi-functional discord bot",
-      "technologies": ["HTML", "CSS", "JS"],
-      "liveLink": "#",
-      "theme": "brown",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app"
-    },
-    {
-      "title": "Portfolio",
-      "description": "You're using it rn",
-      "technologies": ["Vue", "TS", "Less"],
-      "githubLink": "#",
+      "title": "Devshram",
+      "description": "Personal portfolio website showcasing my work and skills",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "githubLink": "https://github.com/avi892nash/devshram",
+      "liveLink": "https://devshram.com",
       "theme": "dark",
       "image": "/api/placeholder/280/160",
-      "category": "complete-app"
+      "category": "complete-app",
+      "featured": true
     },
     {
-      "title": "Bot boilerplate",
-      "description": "Start creating scalable discord.js bot with typescript in seconds",
-      "technologies": ["Discord.js", "TS", "JS"],
-      "githubLink": "#",
-      "theme": "brown",
-      "category": "small-project"
-    },
-    {
-      "title": "My blog",
-      "description": "Front-end of my future blog website written in vue",
-      "technologies": ["VUE", "CSS", "JS"],
-      "githubLink": "#",
-      "theme": "brown",
-      "category": "small-project"
-    },
-    {
-      "title": "Chess pro",
-      "description": "Figma landing page about service for viewing chess tournaments",
-      "technologies": ["Figma"],
-      "figmaLink": "#",
-      "theme": "brown",
-      "category": "small-project"
+      "title": "PureScript MCP Tools",
+      "description": "MCP server providing PureScript development tools for AI assistants like Claude",
+      "technologies": ["PureScript", "Node.js", "MCP", "Tree-sitter", "Language Server"],
+      "category": "tool",
+      "theme": "green",
+      "featured": true,
+      "liveLink": "https://www.npmjs.com/package/purescript-mcp-tools",
+      "githubLink": "https://github.com/avi892nash/purescript-mcp-tools",
+      "image": "/api/placeholder/280/160"
     },
     {
       "title": "Codeforces API Explorer",
@@ -203,59 +151,6 @@
       "liveLink": "https://assets.devshram.com/projects/codeforces-api-example/",
       "githubLink": "https://github.com/avi892nash/Codeforces-API-Example",
       "image": "/api/placeholder/280/160"
-    },
-    {
-      "title": "Building Modern Web Apps",
-      "description": "A comprehensive guide to building modern web applications with React and Next.js",
-      "technologies": ["React", "Next.js", "TypeScript"],
-      "liveLink": "#",
-      "theme": "purple",
-      "category": "blog",
-      "featured": true
-    },
-    {
-      "title": "State Management in React",
-      "description": "Understanding different state management solutions for React applications",
-      "technologies": ["React", "Redux", "Zustand"],
-      "liveLink": "#",
-      "theme": "green",
-      "category": "blog"
-    },
-    {
-      "title": "TypeScript Best Practices",
-      "description": "Essential TypeScript patterns and practices for better code quality",
-      "technologies": ["TypeScript", "JavaScript"],
-      "liveLink": "#",
-      "theme": "brown",
-      "category": "blog"
-    },
-    {
-      "title": "Code Formatter",
-      "description": "A powerful code formatting tool for multiple programming languages",
-      "technologies": ["Node.js", "CLI", "TypeScript"],
-      "githubLink": "#",
-      "liveLink": "#",
-      "theme": "green",
-      "category": "tool",
-      "featured": true
-    },
-    {
-      "title": "API Tester",
-      "description": "Simple tool to test REST APIs with different HTTP methods",
-      "technologies": ["React", "JavaScript", "CSS"],
-      "githubLink": "#",
-      "liveLink": "#",
-      "theme": "purple",
-      "category": "tool"
-    },
-    {
-      "title": "Color Palette Generator",
-      "description": "Generate beautiful color palettes for your design projects",
-      "technologies": ["HTML", "CSS", "JavaScript"],
-      "githubLink": "#",
-      "liveLink": "#",
-      "theme": "brown",
-      "category": "tool"
     }
   ]
 } 

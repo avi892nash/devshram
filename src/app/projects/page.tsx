@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { getCompleteApps, getSmallProjects, getBlogPosts, getTools, projects } from '@/data';
+import { getCompleteApps, getSmallProjects, getBlogPosts, getTools } from '@/data';
 import { useTranslation } from '@/hooks/useTranslation';
 import CompleteAppsList from '@/components/CompleteAppsList';
 import ToolsList from '@/components/ToolsList';
@@ -12,18 +12,18 @@ import AnimatedText from '@/components/AnimatedText';
 
 const ProjectsPage = () => {
   const { t } = useTranslation();
-  const { pages } = t;
+  const { pages, projects } = t;
   const projectsPage = pages.projects;
-  
+
   // Add error handling and logging
   console.log('Projects data:', projects);
   console.log('Projects page data:', projectsPage);
-  
+
   const completeApps = getCompleteApps(projects);
   const smallProjects = getSmallProjects(projects);
   const blogPosts = getBlogPosts(projects);
   const tools = getTools(projects);
-  
+
   console.log('Complete apps:', completeApps);
   console.log('Small projects:', smallProjects);
   console.log('Blog posts:', blogPosts);

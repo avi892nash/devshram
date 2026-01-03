@@ -106,12 +106,12 @@
       "allMedia": "सभी मीडिया"
     },
     "projects": {
-      "title": "projects",
+      "title": "परियोजनाएं",
       "subtitle": "एक जगह पर मेरा सारा काम",
       "completeApps": "पूर्ण ऐप्स",
       "smallProjects": "छोटे प्रोजेक्ट",
       "blogPosts": "ब्लॉग पोस्ट",
-      "tools": "tools",
+      "tools": "उपकरण",
       "liveButton": "लाइव ⟷",
       "cachedButton": "कैश्ड ⚡",
       "githubButton": "Github ⟷",
@@ -120,78 +120,26 @@
   },
   "projects": [
     {
-      "title": "ChertNodes",
-      "description": "माइनक्राफ्ट सर्वर होस्टिंग",
-      "technologies": ["HTML", "SCSS", "Python", "Flask"],
-      "liveLink": "#",
-      "cachedLink": "#",
-      "theme": "brown",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app",
-      "featured": true
-    },
-    {
-      "title": "Kahoot Answers Viewer",
-      "description": "अपने काहूत प्रश्नोत्तरी के उत्तर प्राप्त करें",
-      "technologies": ["CSS", "Express", "Node.js"],
-      "liveLink": "#",
-      "theme": "purple",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app",
-      "featured": true
-    },
-    {
-      "title": "ProtectX",
-      "description": "डिस्कॉर्ड एंटी-क्रैश बॉट",
-      "technologies": ["React", "Express", "Discord.js", "Node.js"],
-      "liveLink": "#",
-      "cachedLink": "#",
-      "theme": "green",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app",
-      "featured": true
-    },
-    {
-      "title": "Kotik Bot",
-      "description": "बहु-कार्यात्मक डिस्कॉर्ड बॉट",
-      "technologies": ["HTML", "CSS", "JS"],
-      "liveLink": "#",
-      "theme": "brown",
-      "image": "/api/placeholder/280/160",
-      "category": "complete-app"
-    },
-    {
-      "title": "Portfolio",
-      "description": "आप इसे अभी उपयोग कर रहे हैं",
-      "technologies": ["Vue", "TS", "Less"],
-      "githubLink": "#",
+      "title": "देवश्रम",
+      "description": "मेरे काम और कौशल को प्रदर्शित करने वाली व्यक्तिगत पोर्टफोलियो वेबसाइट",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "githubLink": "https://github.com/avi892nash/devshram",
+      "liveLink": "https://devshram.com",
       "theme": "dark",
       "image": "/api/placeholder/280/160",
-      "category": "complete-app"
+      "category": "complete-app",
+      "featured": true
     },
     {
-      "title": "Bot boilerplate",
-      "description": "टाइपस्क्रिप्ट के साथ स्केलेबल discord.js बॉट बनाना सेकंडों में शुरू करें",
-      "technologies": ["Discord.js", "TS", "JS"],
-      "githubLink": "#",
-      "theme": "brown",
-      "category": "small-project"
-    },
-    {
-      "title": "My blog",
-      "description": "Vue में लिखी गई मेरी भविष्य की ब्लॉग वेबसाइट का फ्रंट-एंड",
-      "technologies": ["VUE", "CSS", "JS"],
-      "githubLink": "#",
-      "theme": "brown",
-      "category": "small-project"
-    },
-    {
-      "title": "Chess pro",
-      "description": "शतरंज टूर्नामेंट देखने की सेवा के बारे में Figma लैंडिंग पेज",
-      "technologies": ["Figma"],
-      "figmaLink": "#",
-      "theme": "brown",
-      "category": "small-project"
+      "title": "PureScript MCP Tools",
+      "description": "Claude जैसे AI सहायकों के लिए PureScript विकास उपकरण प्रदान करने वाला MCP सर्वर",
+      "technologies": ["PureScript", "Node.js", "MCP", "Tree-sitter", "Language Server"],
+      "category": "tool",
+      "theme": "green",
+      "featured": true,
+      "liveLink": "https://www.npmjs.com/package/purescript-mcp-tools",
+      "githubLink": "https://github.com/avi892nash/purescript-mcp-tools",
+      "image": "/api/placeholder/280/160"
     },
     {
       "title": "Codeforces API एक्सप्लोरर",
@@ -203,59 +151,6 @@
       "liveLink": "https://assets.devshram.com/projects/codeforces-api-example/",
       "githubLink": "https://github.com/avi892nash/Codeforces-API-Example",
       "image": "/api/placeholder/280/160"
-    },
-    {
-      "title": "आधुनिक वेब ऐप्स बनाना",
-      "description": "React और Next.js के साथ आधुनिक वेब एप्लिकेशन बनाने के लिए एक व्यापक गाइड",
-      "technologies": ["React", "Next.js", "TypeScript"],
-      "liveLink": "#",
-      "theme": "purple",
-      "category": "blog",
-      "featured": true
-    },
-    {
-      "title": "React में स्टेट मैनेजमेंट",
-      "description": "React एप्लिकेशन के लिए विभिन्न स्टेट मैनेजमेंट समाधानों को समझना",
-      "technologies": ["React", "Redux", "Zustand"],
-      "liveLink": "#",
-      "theme": "green",
-      "category": "blog"
-    },
-    {
-      "title": "TypeScript सर्वोत्तम प्रथाएं",
-      "description": "बेहतर कोड गुणवत्ता के लिए आवश्यक TypeScript पैटर्न और प्रथाएं",
-      "technologies": ["TypeScript", "JavaScript"],
-      "liveLink": "#",
-      "theme": "brown",
-      "category": "blog"
-    },
-    {
-      "title": "कोड फॉर्मेटर",
-      "description": "कई प्रोग्रामिंग भाषाओं के लिए एक शक्तिशाली कोड फॉर्मेटिंग टूल",
-      "technologies": ["Node.js", "CLI", "TypeScript"],
-      "githubLink": "#",
-      "liveLink": "#",
-      "theme": "green",
-      "category": "tool",
-      "featured": true
-    },
-    {
-      "title": "API टेस्टर",
-      "description": "विभिन्न HTTP विधियों के साथ REST API का परीक्षण करने के लिए सरल टूल",
-      "technologies": ["React", "JavaScript", "CSS"],
-      "githubLink": "#",
-      "liveLink": "#",
-      "theme": "purple",
-      "category": "tool"
-    },
-    {
-      "title": "रंग पैलेट जेनरेटर",
-      "description": "अपने डिज़ाइन प्रोजेक्ट के लिए सुंदर रंग पैलेट बनाएं",
-      "technologies": ["HTML", "CSS", "JavaScript"],
-      "githubLink": "#",
-      "liveLink": "#",
-      "theme": "brown",
-      "category": "tool"
     }
   ]
 } 
