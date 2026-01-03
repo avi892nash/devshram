@@ -194,6 +194,17 @@
       "category": "small-project"
     },
     {
+      "title": "Codeforces API Explorer",
+      "description": "Interactive web app to fetch and display Codeforces user stats and activity",
+      "technologies": ["JavaScript", "Vite", "Codeforces API", "HTML", "CSS"],
+      "category": "small-project",
+      "theme": "green",
+      "featured": false,
+      "liveLink": "https://assets.devshram.com/projects/codeforces-api-example/",
+      "githubLink": "https://github.com/avi892nash/Codeforces-API-Example",
+      "image": "/api/placeholder/280/160"
+    },
+    {
       "title": "Building Modern Web Apps",
       "description": "A comprehensive guide to building modern web applications with React and Next.js",
       "technologies": ["React", "Next.js", "TypeScript"],
