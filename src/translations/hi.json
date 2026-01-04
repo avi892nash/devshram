@@ -126,7 +126,7 @@
       "githubLink": "https://github.com/avi892nash/devshram",
       "liveLink": "https://devshram.com",
       "theme": "dark",
-      "image": "/api/placeholder/280/160",
+      "image": "https://assets.devshram.com/devshram/public/main.png",
       "category": "complete-app",
       "featured": true
     },
@@ -139,7 +139,7 @@
       "featured": true,
       "liveLink": "https://www.npmjs.com/package/purescript-mcp-tools",
       "githubLink": "https://github.com/avi892nash/purescript-mcp-tools",
-      "image": "/api/placeholder/280/160"
+      "image": "https://assets.devshram.com/projects/purescript-mcp-tools/main.png"
     },
     {
       "title": "Codeforces API एक्सप्लोरर",
@@ -150,7 +150,7 @@
       "featured": false,
       "liveLink": "https://assets.devshram.com/projects/codeforces-api-example/",
       "githubLink": "https://github.com/avi892nash/Codeforces-API-Example",
-      "image": "/api/placeholder/280/160"
+      "image": "https://assets.devshram.com/projects/codeforces-api-example/main.png"
     }
   ]
 } 

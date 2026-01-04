@@ -25,11 +25,11 @@ Based on this information, please provide a JSON object with the following struc
   "category": "complete-app | small-project | blog | tool",
   "theme": "purple | green | brown | dark",
   "featured": true or false,
-  "liveLink": "URL if deployed (optional)",
+  "liveLink": "https://assets.devshram.com/projects/{project-name}/index.html (required if deployed)",
   "cachedLink": "Backup URL (optional)",
   "githubLink": "GitHub repository URL (optional)",
   "figmaLink": "Figma design URL (optional)",
-  "image": "/api/placeholder/280/160 (optional)"
+  "image": "https://assets.devshram.com/projects/{project-name}/main.png (required)"
 }
 
 Guidelines for your response:
@@ -47,8 +47,9 @@ Guidelines for your response:
    - "brown" for traditional web apps, general projects
    - "dark" for portfolio/meta projects
 6. **featured**: Set to true only if this is a standout project (high quality, unique, or particularly impressive)
-7. **Links**: Only include links that actually exist. Omit fields if not applicable.
-8. **image**: Use "/api/placeholder/280/160" as default
+7. **liveLink**: Use format https://assets.devshram.com/projects/{project-name}/index.html where {project-name} matches the GitHub workflow YAML file name
+8. **image**: ALWAYS use format https://assets.devshram.com/projects/{project-name}/main.png where {project-name} matches the GitHub workflow YAML file name
+9. **Links**: Only include links that actually exist. Omit cachedLink, githubLink, and figmaLink fields if not applicable.
 
 Please respond ONLY with the JSON object, no additional explanation.
 ```
@@ -78,9 +79,9 @@ Tech Stack: Next.js, TypeScript, Socket.io, Monaco Editor, Redis, PostgreSQL
   "category": "complete-app",
   "theme": "green",
   "featured": true,
-  "liveLink": "https://collab-editor.vercel.app",
+  "liveLink": "https://assets.devshram.com/projects/collab-editor/index.html",
   "githubLink": "https://github.com/user/collab-editor",
-  "image": "/api/placeholder/280/160"
+  "image": "https://assets.devshram.com/projects/collab-editor/main.png"
 }
 ```
 
