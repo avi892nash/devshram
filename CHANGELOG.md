@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/avi892nash/devshram/compare/v0.0.11...v0.0.12) (2026-01-04)
+
+
+### Bug Fixes
+
+* **config:** updating images of current project ([2015e3e](https://github.com/avi892nash/devshram/commit/2015e3ee84b09ab2fa931b58daf754ee0fe905a4))
+
 ## [0.0.11](https://github.com/avi892nash/devshram/compare/v0.0.10...v0.0.11) (2026-01-03)
 
 
